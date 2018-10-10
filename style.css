@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto;
+}
+
+.container {
+  padding: 10px 5px 20px 10px;
+}
+
+.players-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.player {
+  border: black 1px solid;
+  border-radius: 80px;
+  height: 100px;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.avatar {
+
+}
+
+.name-bank {
+  display: flex;
+  flex-direction: column;
+}
+
+.board-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.game-board {
+  width: 100%;
+  height: 300px;
+}
+
+.game-board-row {
+  display: flex;
+  justify-content: center;
+}
+
+.game-board-box {
+  background-color: #1ABF85;
+  display: block;
+  float: left;
+  height: 70px;
+  width: 70px;
+  position: relative;
+  border: 2px solid black;
+  margin: 1.5px;
+}
+
+.category-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.category-display {
+  width: 773px;
+  height: 80px;
+  border: solid 1px black;
+  margin-left: 50px;
+}
+
+.logo {
+  width: 20px;
+  height: 80px;
+  padding: 10px;
+}
+
+.letter-bank-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: 
+  space-around;
+}
+
+.letter-bank {
+  border: black 1px solid;
+  height: 80px;
+  width: 80%;
+}
+
+.action-buttons-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button {
+  background-color: #8F29E9;
+  color: white;
+  font-size: 20px;
+  border: black 1px solid;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  margin: 20px;
+}
