@@ -7,6 +7,35 @@ body {
   grid-template-rows: auto;
 }
 
+
+.welcome-message {
+  position: absolute;
+  z-index: 1;
+  background-color: #1ABF85;
+  border: 1px solid black;
+  height: 50vh;
+  width: 50vw;
+  margin-left: 340px;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.wheel-logo {
+  width: 60%;
+}
+
+.start-game-button {
+  width: 200px;
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
 .container {
   padding: 10px 5px 20px 10px;
 }
