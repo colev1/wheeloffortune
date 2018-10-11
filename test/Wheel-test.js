@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const Wheel = require('../wheel.js');
+const Wheel = require('../Wheel.js');
 const spies = require('chai-spies');
 chai.use(spies);
 

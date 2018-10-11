@@ -1,6 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
-const Game = require('../game.js');
+const Game = require('../Game.js');
+const Round = require('../Round.js');
 const spies = require('chai-spies');
 chai.use(spies);
 
@@ -27,11 +28,11 @@ describe ('Game', function() {
     expect(game.players.length).to.equal(3);
   });
 
-  it('should have 4 rounds', function() {
-    expect(game.rounds.length).to.equal(4);
+  it('should instantiate round 1', function() {
+    // expect(round.round).to.equal('round 1');
+
+    game.startGame();
+    expect(round).to.exist();
   });
 
-  it('should start round 1', function() {
-    
-  })
 })

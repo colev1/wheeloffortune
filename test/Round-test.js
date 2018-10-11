@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const Round = require('../round.js');
+const Round = require('../Round.js');
 const spies = require('chai-spies');
 chai.use(spies);
 
@@ -8,7 +8,31 @@ global.domUpdates = require('../domUpdates.js');
 chai.spy.on(global.domUpdates, [], () => true);
 
 describe ('Round', function() {
+  var round;
+  beforeEach(function() {
+    round = new Round();
+  });
+
   it('should return true', function() {
     expect(true).to.equal(true);
+  });
+
+  it('should have a default of round 1', function() {
+    expect(round.currentRound).to.equal(1);
+  });
+
+  it('should be able to take currentRound, puzzle, and gameboard as a parameter', function() {
+    round = new Round(2, 'The 90s', 'Disco');
+    expect(round).to.eql({currentRound: 2, puzzle: 'The 90s', gameBoard: 'Disco', winner: ''});
+  });
+
+  it('should have a winner', function() {
+    round = new Round(2, 'The 90s', 'Disco', 'Libby');
+    expect(round.winner).to.equal('Libby');
+  });
+
+  it('should declare a winner at the end of each round', function() {
+    
   })
+
 })
