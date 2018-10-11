@@ -9,6 +9,8 @@ body {
   
  /* background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);*/
   background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 
@@ -124,7 +126,7 @@ body {
 
 .game-board {
   width: 100%;
-  height: 300px;
+  /*height: 300px;*/
 }
 
 .game-board-row {
@@ -133,11 +135,12 @@ body {
 }
 
 .game-board-box {
-  background-color: #1ABF85;
+  /*background-color: #1ABF85;*/
+  background-image: radial-gradient(circle, #77f0c4 2%, #1ABF85);
   display: block;
   float: left;
-  height: 70px;
-  width: 70px;
+  height: 80px;
+  width: 65px;
   position: relative;
   border: 2px solid black;
   margin: 1.5px;
