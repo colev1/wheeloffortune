@@ -1,8 +1,8 @@
 class Player {
 	constructor(name, score, grandTotal) {
-		this.name = name,
-		this.score = score,
-		this.grandTotal = grandTotal
+		this.name = name;
+		this.score = score;
+		this.grandTotal = grandTotal;
 	}
 	buyVowel() {
 
@@ -20,3 +20,7 @@ class Player {
 
 	}
  }
+
+ if (typeof module !== 'undefined') {
+	module.exports = Player;
+}
