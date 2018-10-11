@@ -5,8 +5,14 @@ class Game {
 		this.winner = winner;
 	}
 
+
 	startRound1() {
 		
+
+	startGame() {
+		console.log(start);
+		return ;
+
 	}
 
 	resetGame() {
@@ -18,6 +24,8 @@ class Game {
 	}
 }
 
+
 if (typeof module !== 'undefined') {
 	module.exports = Game;
 }
+
