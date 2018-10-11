@@ -5,6 +5,10 @@
 body {
   display: grid;
   grid-template-rows: auto;
+  /*background-image: linear-gradient(to bottom right, #798df2, #9778f1);*/
+  
+ /* background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);*/
+  background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
 }
 
 
@@ -12,24 +16,39 @@ body {
   position: absolute;
   z-index: 1;
   background-color: #1ABF85;
-  border: 1px solid black;
-  height: 50vh;
-  width: 50vw;
-  margin-left: 340px;
-  margin-top: 200px;
+  border: 6px solid white;
+  outline: 1px solid black;
+  height: 60%;
+  width: 80%;
+  left: 100px;
+  top: 160px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
 }
 
+
+
+
 .wheel-logo {
-  width: 60%;
+  height: 80%;
 }
 
 .start-game-button {
   width: 200px;
   font-size: 20px;
+  background-color: #8F29E9;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.start-game-button:hover {
+  background-color: #8b74f2;
+  cursor: url(images/pbox.png), auto;
 }
 
 .hidden {
@@ -48,23 +67,52 @@ body {
 }
 
 .player {
-  border: black 1px solid;
+  border: white 2px solid;
   border-radius: 80px;
   height: 100px;
   width: 300px;
   display: flex;
+  font-size: 20px;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
 
-.avatar {
+.player-1 {
+  background-color: red;
+}
 
+.player-2 {
+  background-color: yellow;
+}
+
+.player-3 {
+  background-color: blue;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  font-size: 40px;
+  justify-content: space-around;
+  height: 100%;
+
+}
+
+.player-name {
+  font-size: 16px;
 }
 
 .name-bank {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  align-items: center;
+}
+
+.round-money{
+  font-size: 50px;
 }
 
 .board-container {
