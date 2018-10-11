@@ -5,14 +5,9 @@
 body {
   display: grid;
   grid-template-rows: auto;
-  /*background-image: linear-gradient(to bottom right, #798df2, #9778f1);*/
-  
- /* background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);*/
-  background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url('images/disco.jpg');
 }
-
 
 .welcome-message {
   position: absolute;
@@ -132,17 +127,18 @@ body {
 .game-board-row {
   display: flex;
   justify-content: center;
+
 }
 
 .game-board-box {
-  /*background-color: #1ABF85;*/
-  background-image: radial-gradient(circle, #77f0c4 2%, #1ABF85);
+
+  background-color: #01A869;
   display: block;
   float: left;
   height: 80px;
   width: 65px;
   position: relative;
-  border: 2px solid black;
+  border: 1px solid black;
   margin: 1.5px;
 }
 
@@ -155,15 +151,20 @@ body {
 
 .category-display {
   width: 773px;
-  height: 80px;
-  border: solid 1px black;
+  height: 45px;
+  border-top: orange 5px double;
+  border-bottom: orange 5px double;
   margin-left: 50px;
+  text-align: center;
+  color: white;
+  font-size: 16px;
 }
 
 .logo {
-  width: 20px;
-  height: 80px;
+  width: 120px;
+  height: 100px;
   padding: 10px;
+  background-image: url("WOF-logo1.png");
 }
 
 .letter-bank-container {
@@ -175,8 +176,9 @@ body {
 }
 
 .letter-bank {
-  border: black 1px solid;
-  height: 80px;
+  border-top: orange 5px double;
+  border-bottom: orange 5px double;
+  height: 45px;
   width: 80%;
 }
 
@@ -188,10 +190,10 @@ body {
 }
 
 .button {
-  background-color: #8F29E9;
+  background-image: repeating-linear-gradient(to right, gold, orange 40px, gold 60px);
   color: white;
   font-size: 20px;
-  border: black 1px solid;
+  border: orange 5px double;
   border-radius: 50%;
   display: flex;
   align-items: center;
