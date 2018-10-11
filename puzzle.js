@@ -1,6 +1,6 @@
 class Puzzle {
 	constructor(category) {
-		this.category = category,
+		this.category = category;
 	}
 
 	generateNewPuzzle() {
@@ -11,4 +11,9 @@ class Puzzle {
 		
 	}
 	
+}
+
+
+if (typeof module !== 'undefined') {
+  module.exports = Puzzle;
 }
