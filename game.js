@@ -6,7 +6,8 @@ class Game {
 	}
 
 	startGame() {
-		
+		console.log(start);
+		return 
 	}
 
 	resetGame() {
@@ -17,4 +18,6 @@ class Game {
 
 	}
 }
+
+
 
