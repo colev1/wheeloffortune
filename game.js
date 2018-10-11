@@ -1,28 +1,33 @@
 class Game {
-	constructor(winner) {
+	constructor(winner, round) {
 		this.players = ['player 1', 'player 2', 'player 3'];
-		this.rounds = ['round 1', 'round 2', 'round 3', 'round 4'];
 		this.winner = winner;
+		this.round = round;
 	}
-
-
-	startRound1() {
-		
 
 	startGame() {
-		console.log(start);
-		return ;
+		//when the start game button is clicked, we want to create an instance of round where currentRound is 1
+		// return round = new Round();
+		
+		}
+	};
 
-	}
 
-	resetGame() {
 
-	}
+// 	// startGame() {
+// 	// 	console.log(start);
+// 	// 	return ;
+
+// 	// }
+
+// 	resetGame() {
+
+// 	}
 	
-	quitGame() {
+// 	quitGame() {
 
-	}
-}
+// 	}
+// }
 
 
 if (typeof module !== 'undefined') {

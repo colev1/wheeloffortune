@@ -4,7 +4,7 @@ class Puzzle {
 	}
 
 	generateNewPuzzle() {
-
+    
 	}
 
 	displayPuzzleCategory(category) {
