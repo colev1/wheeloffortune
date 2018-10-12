@@ -2,7 +2,7 @@ class Player {
 	constructor(name, grandTotal) {
 		this.name = name;
 		this.roundScore = 0;
-		this.totalScore = totalScore;
+		// this.totalScore = totalScore;
 		this.isTurn = false;
 	}
 	
