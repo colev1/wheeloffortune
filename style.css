@@ -12,13 +12,12 @@ body {
 .welcome-message {
   position: absolute;
   z-index: 1;
-  background-color: #1ABF85;
-  border: 6px solid white;
-  outline: 1px solid black;
-  height: 60%;
-  width: 80%;
-  left: 100px;
-  top: 160px;
+  background-image: linear-gradient(#A8F2F9, #01A869);
+  border: 10px solid orange;
+  height: 70%;
+  width: 65%;
+  left: 250px;
+  top: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,21 +25,18 @@ body {
   box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
 }
 
-
-
-
 .wheel-logo {
   height: 80%;
 }
 
 .start-game-button {
   width: 200px;
-  font-size: 20px;
-  background-color: #8F29E9;
+  font-size: 18px;
   height: 40px;
-  color: white;
   font-weight: bold;
-  border: 2px solid white;
+  color: white;
+  border: orange 5px double;
+  background-image: linear-gradient(#A8F2F9, #01A869);
 }
 
 .start-game-button:hover {
@@ -60,39 +56,36 @@ body {
   align-items: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  margin-left: 40px;
 }
 
 .player {
-  border: white 2px solid;
-  border-radius: 80px;
-  height: 100px;
-  width: 300px;
+  border: orange 5px double;
+  height: 75px;
+  width: 210px;
   display: flex;
   font-size: 20px;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-}
-
-.player-1 {
-  background-color: red;
-}
-
-.player-2 {
-  background-color: yellow;
-}
-
-.player-3 {
-  background-color: blue;
+  margin: 20px 50px 10px 50px;
+  border-radius: 5px;
 }
 
 .avatar {
   display: flex;
   flex-direction: column;
-  font-size: 40px;
+  font-size: 20px;
+  text-align: center;
   justify-content: space-around;
-  height: 100%;
+  height: 130%;
+  border: 5px double orange;
+  border-radius: 50%;
+  width: 45%;
+  z-index: 1;
+  margin-left: -76px;
+  background-image: repeating-linear-gradient(to right, gold, orange 40px, gold 60px);
 
 }
 
@@ -104,12 +97,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100%;
+  height: 75%;
   align-items: center;
 }
 
 .round-money{
-  font-size: 50px;
+  font-size: 20px;
 }
 
 .board-container {
@@ -117,21 +110,19 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding: 0px;
 }
 
 .game-board {
   width: 100%;
-  /*height: 300px;*/
 }
 
 .game-board-row {
   display: flex;
   justify-content: center;
-
 }
 
 .game-board-box {
-
   background-color: #01A869;
   display: block;
   float: left;
@@ -139,7 +130,35 @@ body {
   width: 65px;
   position: relative;
   border: 1px solid black;
-  margin: 1.5px;
+  margin: 1px;
+}
+
+hr {
+  border: #A8F2F9 2px solid;
+  width: 800px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.lights {
+  display: flex;
+  justify-content: center;
+}
+
+.light-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: orange;
+  margin: 0px 22px;
+}
+
+hr.game-outline {
+  border: #A8F2F9 2px solid;
+  width: 800px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
 }
 
 .category-container {
@@ -147,25 +166,27 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 15px 0px 10px 0px;
 }
 
 .category-display {
-  width: 773px;
+  width: 200px;
   height: 45px;
-  border-top: orange 5px double;
-  border-bottom: orange 5px double;
-  margin-left: 50px;
+  border: orange 5px double;
+  margin-left: 5px;
   text-align: center;
   color: white;
   font-size: 16px;
+  padding: 10px 0px 5px 0px;
+
 }
 
-.logo {
-  width: 120px;
-  height: 100px;
+/*.logo {
+  width: 10px;
+  height: 10px;
   padding: 10px;
   background-image: url("WOF-logo1.png");
-}
+}*/
 
 .letter-bank-container {
   align-items: center;
@@ -173,13 +194,25 @@ body {
   flex-direction: row;
   justify-content: 
   space-around;
+  padding-bottom: 10px;
 }
 
 .letter-bank {
   border-top: orange 5px double;
   border-bottom: orange 5px double;
   height: 45px;
-  width: 80%;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.letters {
+  background-color: #E3F1F3;
+  border: 1px solid grey;
+  border-radius: 5px;
+  color: grey;
+  margin: 2px 2px;
+  padding: 8px 10px;
 }
 
 .action-buttons-container {
@@ -187,6 +220,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 0px;
 }
 
 .button {
