@@ -6,22 +6,30 @@
 
 $('.start-game-button').on('click', hideWelcomeMessage);
 $('.start-game-button').on('click', createNewGame);
+$('.spin-button').on('click', spinWheel);
 
+var wheel;
+var round;
+var player1;
+var player2;
+var player3;
+var game;
 
 function createNewGame() {
   round = new Round();
   game = new Game(round);
+  wheel = new Wheel();
   game.startGame();
   player1 = new Player();
   player2 = new Player();
   player3 = new Player();
-
+  wheel.generateWheelValues();
   puzzleBankIndex = Math.floor(Math.random() * 4);
   selectPuzzleBank(puzzleBankIndex);
 
 }
 
-//generate puzzle bank for 
+// generate puzzle bank for 
 function selectPuzzleBank(puzzleBankIndex) {
   puzzle = new Puzzle();
   puzzleBankArray = [ 'one_word_answers', 'two_word_answers', 'three_word_answers', 'four_word_answers'];
@@ -34,7 +42,14 @@ function selectPuzzleBank(puzzleBankIndex) {
     puzzle.generateNewPuzzle(selectedPuzzle);
 }
 
+function spinWheel() {
+  wheel.spinWheel();
 
+}
+ 
+ //if the value of the wheel is bankrupt, score of player is 0;
+  //moves on to next player
+  //if the value of the wheel is lose a turn, the player turn is over, moves to next playe 
 
 //add event listeners to the player buttons, invoke their methods when clicked
 //function selectedConsonantTurn('letter') {}
@@ -56,14 +71,6 @@ function hideWelcomeMessage(event) {
 }
 
 
-const letters = ("abcdefghijklmnopqrstuvwxyz").toUpperCase();
-
-
-$.each((letters) => {
-    let letterButton = $('<button class="letters">' + value.name + "</button>");
-    $("#letter-bank-container").append(letterButton);
-});
-console.log(letters);
 
 
 

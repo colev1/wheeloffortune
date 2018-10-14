@@ -15,35 +15,33 @@
   </section>
 
   <section class = "players-container container">
+
     <article class="player player-1"> 
-      <div class= "avatar"> 
-        <i class="fas fa-user-alt"></i>  
-        <h2 class="player-name"> Player 1 </h2>
+      <div class= "avatar avatar1"> 
       </div> 
       <div class="name-bank"> 
+        <h1 class="player-name"> Player 1  </h1>
         <h1 class="round-money">  $0 </h1> 
         <h1> TOTAL BANK: $0 </h1> 
     </div>
     </article>
     <article class="player player-2">
-      <div class= "avatar"> 
-      <i class="fas fa-user-alt"></i>
-      <h2 class="player-name"> Player2  </h2>
+      <div class= "avatar avatar2"> 
     </div> 
       <div class="name-bank"> 
+        <h1 class="player-name"> Player 2  </h1>
         <h1 class="round-money"> $0 </h1>
       <h1> TOTAL BANK: $0 </h1> 
     </article>
     <article class="player player-3"> 
-      <div class= "avatar"> 
-      <i class="fas fa-user-alt"></i>
-      <h2 class="player-name"> Player 3 </h2>
-       </div> 
+      <div class= "avatar avatar3"></div> 
       <div class="name-bank"> 
+        <h1 class="player-name"> Player 3  </h1>
         <h1 class="round-money"> $0 </h1> 
       <h1> TOTAL BANK: $0 </h1> 
     </div> 
     </article>
+
   </section>
   <hr class="game-outline">
   <section class="lights">
@@ -93,12 +91,8 @@
         <div class="game-board-box"> </div>
         <div class="game-board-box"> </div>
         <div class="game-board-box"> </div>
-        <div class="game-board-box"> </div>
-        <div class="game-board-box"> </div>
       </section>
       <section class="game-board-row"> 
-        <div class="game-board-box"> </div>
-        <div class="game-board-box"> </div>
         <div class="game-board-box"> </div>
         <div class="game-board-box"> </div>
         <div class="game-board-box"> </div>
@@ -147,12 +141,13 @@
     <div class="light-circle"></div>
   </section>
   <hr class="game-outline">
-  <section class="category-container container"> 
-    <!-- <article class="logo">
-    logo
-    </article> -->
+
+  <section class="category-container container">
+    <article class="logo">
+    </article>
     <article class="category-display"> CATEGORY </article>
   </section>
+
   <section class="letter-bank-container container"> 
     <article class="letter-bank">
         <div class="letters B">B</div>
@@ -177,11 +172,17 @@
         <div class="letters Z">Z</div>
     </article>
   </section>
-  <section class="action-buttons-container container">
-      <article class="button vowel-button"> VOWEL </article>
-      <article class="button spin-button"> SPIN! </article>
-      <article class="button solve-button"> SOLVE</article>
+
+  <section class="spin-value-container">
+    <article class="value-display"></article>
   </section>
+
+  <section class="action-buttons-container container">
+    <button class="button vowel-button"> VOWEL </button>
+    <button class="button spin-button"> SPIN! </button>
+    <button class="button solve-button"> SOLVE</button>
+  </section>
+
   <script type="text/javascript" src="data-set.js"></script>
   <script type="text/javascript" src="Wheel.js"></script>
   <script type="text/javascript" src="Puzzle.js"></script>

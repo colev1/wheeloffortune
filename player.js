@@ -2,49 +2,27 @@ class Player {
 	constructor(name, grandTotal) {
 		this.name = name;
 		this.roundScore = 0;
-		// this.totalScore = totalScore;
+		this.totalScore = 0;
 		this.isTurn = false;
 	}
 	
-
-	incrementRoundScore(addedScore) {
-		
-		player.roundScore += addedScore;
+	incrementRoundScore(roundScore) {
+		this.roundScore += roundScore;
 	}
 
-	cumulateScore(roundScore) {
-    //if player === winner, then add their score to total score
-    //reset all round scores to 0
-    player.totalScore += player.roundScore;
+	cumulateTotalScore(roundScore) {
+    this.totalScore += player.roundScore;
   }
 
-	activateWheel() {
+  scoreBankrupt() {
+  	this.roundScore = 0;
+  }
 
-	}
-
-	buyVowel() {
-
-		//change player.isTurn = false;
-	}
-		
-	selectConsonant(consonant) {
-	
-
-		//change player.isTurn = false;
-		//create a check consonant function on the puzzle to return true or false
-
-		//if puzzle.checkconsonant === true , then do something
-
-	}
-
-	solvePuzzle() {
-
-		//change player.isTurn = false;
-		}
-	startTurn() {
+	takeTurn() {
 		this.isTurn = true;
 	}
- }
+
+}
 
  if (typeof module !== 'undefined') {
 	module.exports = Player;
