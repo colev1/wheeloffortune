@@ -6,6 +6,7 @@
 
 $('.start-game-button').on('click', hideWelcomeMessage);
 $('.start-game-button').on('click', createNewGame);
+// $('.start-game-button').on('click', displayCategory);
 $('.spin-button').on('click', spinWheel);
 
 var wheel;
@@ -33,18 +34,15 @@ function createNewGame() {
 function selectPuzzleBank(puzzleBankIndex) {
   puzzle = new Puzzle();
   puzzleBankArray = [ 'one_word_answers', 'two_word_answers', 'three_word_answers', 'four_word_answers'];
-  var puzzleBankArray = [ 'one_word_answers', 'two_word_answers', 'three_word_answers', 'four_word_answers' ];
-  // var puzzleBankArray = Object.keys(data);
-    console.log(data);
     var puzzleBankofGame = puzzleBankArray[puzzleBankIndex];
     var chosenBankArray = data.puzzles[puzzleBankofGame].puzzle_bank;
     var selectedPuzzle = chosenBankArray[Math.floor(Math.random() * chosenBankArray.length)];
     puzzle.generateNewPuzzle(selectedPuzzle);
+    puzzle.displayPuzzleCategory();
 }
 
 function spinWheel() {
   wheel.spinWheel();
-
 }
  
  //if the value of the wheel is bankrupt, score of player is 0;
@@ -54,11 +52,6 @@ function spinWheel() {
 //add event listeners to the player buttons, invoke their methods when clicked
 //function selectedConsonantTurn('letter') {}
 
-
-
-//function solve Puzzle() --> 
-//check if input field is equal to the puzzle
-//if true, round = new round; puzzle = new puzzle(),
 
 //spin wheel function should call class wheel
 //call method wheel.spin to get value

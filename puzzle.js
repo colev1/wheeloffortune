@@ -1,26 +1,25 @@
 class Puzzle {
-	constructor(puzzleBankIndex, category) {
+	constructor(puzzleBankIndex, category, answer) {
     this.puzzleBankIndex = puzzleBankIndex;
     this.category = category || '';
 	}
 
 	generateNewPuzzle(selectedPuzzle) {
-    
-    // var puzzleBankArray = [ 'one_word_answers', 'two_word_answers', 'three_word_answers', 'four_word_answers' ];
-    // console.log(data);
-    // var puzzleBankofGame = puzzleBankArray[puzzleBankIndex];
-    // var chosenBankArray = data.puzzles[puzzleBankofGame].puzzle_bank;
-    // var selectedPuzzle = chosenBankArray[Math.floor(Math.random() * chosenBankArray.length)];
+
     this.category = selectedPuzzle.category;
-    debugger;
-    return selectedPuzzle;
+    this.letters = selectedPuzzle.total_number_of_letters;
+    this.answer = selectedPuzzle.correct_answer.toLowerCase();
 	}
 
-	displayPuzzleCategory(category) {
-		//target category section on HTML
-    //display category on page
-
+	displayPuzzleCategory() {
+    $('.category-display').text('Category: ' + puzzle.category);
 	}
+
+    solvePuzzle() {
+    //check if input field is equal to the puzzle
+    if ()
+    //if true, round = new round; puzzle = new puzzle(),
+    }
 	
 }
 
