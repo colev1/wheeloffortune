@@ -35,4 +35,13 @@ describe ('Puzzle', function() {
     puzzle.generateNewPuzzle();
     expect(this.category).to.equal(selectedPuzzle.category);
   });
+
+  it('should be able to check the guess input against the answer', function() {
+    // puzzle.checkGuess('Silly willy');
+    
+  });
+
+
+
+
 })
