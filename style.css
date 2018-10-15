@@ -317,6 +317,10 @@ hr.game-outline {
   display: none;
 }
 
+.greyed {
+  background-color: #E3F1F3;
+}
+
 
 
 

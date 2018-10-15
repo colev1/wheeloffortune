@@ -4,16 +4,15 @@ class Puzzle {
     this.category = category || '';
 	}
 
-	generateNewPuzzle(selectedPuzzle) {
-
+	generateNewPuzzle(puzzleBankIndex) {
+    let puzzleBankArray = [ 'one_word_answers', 'two_word_answers', 'three_word_answers', 'four_word_answers'];
+    var puzzleBankofGame = puzzleBankArray[puzzleBankIndex];
+    var chosenBankArray = data.puzzles[puzzleBankofGame].puzzle_bank;
+    var selectedPuzzle = chosenBankArray[Math.floor(Math.random() * chosenBankArray.length)];
     this.category = selectedPuzzle.category;
     this.letters = selectedPuzzle.total_number_of_letters;
     this.answer = selectedPuzzle.correct_answer.toLowerCase();
-	}
-
-	displayPuzzleCategory() {
-    $('.category-display').text('Category: ' + puzzle.category);
-	}
+	};
 
   displayPuzzleBoard () {
   for (var i=0; i < this.answer.length; i++) {
@@ -24,10 +23,13 @@ class Puzzle {
   }
 }
 
-    checkGuess(playerGuess) {
+    checkGuess(event) {
     //check if input field is equal to the puzzle
     // if ()
     //if true, round = new round; puzzle = new puzzle(),
+    debugger;
+    event.preventDefault();
+    let playerGuess = $('.solve-input').val().toLowerCase();
       if (playerGuess === puzzle.answer) {
       console.log('You solved it!');
       puzzle = new Puzzle();
@@ -36,12 +38,6 @@ class Puzzle {
       }
       $('.solve-button-form').addClass('hidden');
       }
-
-    checkLetter(event, letter) {
-        if (this.answer.includes(letter)) {
-        $(event.target).hide(); 
-        }
-    }
 }  
 
 
