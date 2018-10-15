@@ -1,39 +1,16 @@
 class Game {
-	constructor(winner, round) {
-		this.players = ['player 1', 'player 2', 'player 3'];
-		this.winner = winner;
+	constructor(round) {
 		this.round = round;
 	}
 
-	startGame() {
-		//when the start game button is clicked, we want to create an instance of round where currentRound is 1
-		// return round = new Round();
-		
-		}
+	resetGame() {
 
-		selectPuzzleBank(puzzleBankIndex) {
-  		puzzle.generateNewPuzzle(puzzleBankIndex);
-  		domUpdates.displayPuzzleCategory();
-  		domUpdates.displayPuzzleBoard();
-		}
-	};
-
-
-
-// 	// startGame() {
-// 	// 	console.log(start);
-// 	// 	return ;
-
-// 	// }
-
-// 	resetGame() {
-
-// 	}
+	}
 	
-// 	quitGame() {
+	quitGame() {
 
-// 	}
-// }
+	}
+};
 
 
 if (typeof module !== 'undefined') {
