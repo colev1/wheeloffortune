@@ -7,6 +7,7 @@ $('.solve-button').on('click', domUpdates.displaySolveInput);
 $('.vowel-button').on('click', domUpdates.displayVowels);
 $('.vowels').on('click', domUpdates.checkLetter);
 $('.letters').on('click', domUpdates.checkLetter);
+$('.solve-input').on('keyup', domUpdates.enableSolveButton);
 
 var wheel;
 var round;
@@ -28,6 +29,7 @@ function createNewGame() {
   puzzleBankIndex = Math.floor(Math.random() * 4);
   puzzle = new Puzzle();
   game.selectPuzzleBank(puzzleBankIndex);
+  domUpdates.enablePlayerButtons();
 }
 
 function spinWheel() {

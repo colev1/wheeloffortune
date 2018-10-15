@@ -1,6 +1,6 @@
 class Puzzle {
 	constructor(puzzleBankIndex, category, answer) {
-    this.puzzleBankIndex = puzzleBankIndex;
+    // this.puzzleBankIndex = puzzleBankIndex;
     this.category = category || '';
 	}
 
@@ -11,8 +11,9 @@ class Puzzle {
     var selectedPuzzle = chosenBankArray[Math.floor(Math.random() * chosenBankArray.length)];
     this.category = selectedPuzzle.category;
     this.letters = selectedPuzzle.total_number_of_letters;
-    var answer = selectedPuzzle.correct_answer.toLowerCase().replace(/-/g, " ");
+    var answer = selectedPuzzle.correct_answer.toLowerCase().replace(/-/g, " ").replace(/&/g, "and");
     this.answer = answer;
+    this.numberOfWords = puzzleBankIndex+1;
     console.log(this);
 	};
 
@@ -24,7 +25,7 @@ class Puzzle {
     let playerGuess = $('.solve-input').val().toLowerCase();
       if (playerGuess === puzzle.answer) {
       console.log('You solved it!');
-      round = new Round();
+      // createNewRound();
       // puzzle = new Puzzle();
       // puzzle.generateNewPuzzle(puzzleBankIndex);
       
@@ -38,6 +39,7 @@ class Puzzle {
         }
       } else {
       console.log('Wrong!');
+      //go to next player
       }
       $('.solve-button-form').addClass('hidden');
       }
