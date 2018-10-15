@@ -12,15 +12,12 @@ class Wheel {
     return this.wheelElements;
   }
 
-  spinWheel() {
+  spinNewWheel() {
     let newValue = Math.round(Math.random() * 9);
     this.currentWheelElement = this.wheelElements[newValue];
-    debugger;
     return this.currentWheelElement;
 	}
 
-  //randomize wheel value 
-  //return a value
  }
 
 if (typeof module !== 'undefined') {
