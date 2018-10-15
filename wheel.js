@@ -18,6 +18,10 @@ class Wheel {
     return this.currentWheelElement;
 	}
 
+  displayWheelValue() {
+    $('.value-display').text('Wheel Value: ' + wheel.currentWheelElement);
+  }
+
  }
 
 if (typeof module !== 'undefined') {

@@ -1,4 +1,4 @@
-sx
+
 // const game = new Game;
 
 
@@ -44,6 +44,8 @@ function selectPuzzleBank(puzzleBankIndex) {
 
 function spinWheel() {
   let newWheelValue = wheel.spinNewWheel();
+  wheel.displayWheelValue();
+
   if (newWheelValue === 'Bankrupt') {
     player1.scoreBankrupt();
   }
