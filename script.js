@@ -8,6 +8,7 @@ $('.start-game-button').on('click', hideWelcomeMessage);
 $('.start-game-button').on('click', createNewGame);
 // $('.start-game-button').on('click', displayCategory);
 $('.spin-button').on('click', spinWheel);
+$('.solve-button').on('click', displaySolveInput)
 
 var wheel;
 var round;
@@ -63,8 +64,31 @@ function hideWelcomeMessage(event) {
   $('.welcome-message').hide();
 }
 
+function displaySolveInput(event) {
+  event.preventDefault();
+  $('.solve-button-form').removeClass('hidden');
+}
 
+$('.submit-guess-button').on('click', checkGuess);
 
+function checkGuess(event) {
+  event.preventDefault();
+  let playerGuess = $('.solve-input').val().toLowerCase();
+  puzzle.checkGuess(playerGuess);
+}
+
+$('.vowel-button').on('click', checkVowel);
+
+function checkVowel(e, target) {
+  e.preventDefault();
+  puzzle.checkVowel(target);
+}
+
+// $('.')
+
+function checkLetter() {
+
+}
 
 
 // game.startGame() 

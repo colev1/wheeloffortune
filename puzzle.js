@@ -15,13 +15,23 @@ class Puzzle {
     $('.category-display').text('Category: ' + puzzle.category);
 	}
 
-    solvePuzzle() {
+    checkGuess(playerGuess) {
     //check if input field is equal to the puzzle
-    
+    // if ()
     //if true, round = new round; puzzle = new puzzle(),
+    if (playerGuess === puzzle.answer) {
+        console.log('You solved it!')
     }
-	
+    else {
+        console.log('Wrong!');
+    }
+    $('.solve-button-form').addClass('hidden');
+    }
+    // checkLetter(letter) {
+    // if ()
+    // }
 }
+
 
 
 if (typeof module !== 'undefined') {
