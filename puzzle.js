@@ -31,7 +31,9 @@ class Puzzle {
     let playerGuess = $('.solve-input').val().toLowerCase();
       if (playerGuess === puzzle.answer) {
       console.log('You solved it!');
+      round = new Round();
       puzzle = new Puzzle();
+      puzzle.generateNewPuzzle(puzzleBankIndex);
       } else {
       console.log('Wrong!');
       }

@@ -4,6 +4,7 @@
 
 body {
   display: grid;
+  font-family: sans-serif;
   grid-template-rows: auto;
   background-size: cover;
   background-image: url('images/disco.jpg');
