@@ -54,6 +54,7 @@ body {
   flex-direction: row;
   justify-content: center;
   margin-left: 40px;
+  padding-bottom: 0px;
 }
 
 .player {
@@ -78,7 +79,7 @@ body {
   width: 45%;
   z-index: 1;
   margin-left: -76px;
-  background-color: #E3F1F3;;
+  background-color: #E3F1F3;
 }
 
 .avatar1 {
@@ -98,7 +99,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 
 .player-name {
   font-size: 16px;
@@ -169,7 +169,6 @@ hr.game-outline {
   width: 800px;
   margin-top: 0px;
   margin-bottom: 0px;
-
 }
 
 .category-container {
@@ -177,25 +176,17 @@ hr.game-outline {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 15px 0px 10px 0px;
+  padding: 15px 0px 0px 0px;
 }
 
 .category-display {
-  width: 200px;
-  height: 45px;
+  width: 250px;
+  height: 40px;
   border: orange 5px double;
   margin-left: 5px;
   text-align: center;
-  color: white;
   font-size: 16px;
-  padding: 10px 0px 5px 0px;
-
-}
-
-.logo {
-  width: 20px;
-  height: 50px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .spin-value-container {
@@ -203,18 +194,17 @@ hr.game-outline {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 15px 0px 10px 0px;
+  padding: 5px 0px 5px 0px;
 }
 
 .value-display {
-  width: 200px;
-  height: 45px;
+  width: 250px;
+  height: 40px;
   border: orange 5px double;
   margin-left: 5px;
   text-align: center;
-  color: white;
   font-size: 16px;
-  padding: 10px 0px 5px 0px;
+  padding: 5px;
 }
 
 .letter-bank-container {
@@ -230,7 +220,7 @@ hr.game-outline {
   border-top: orange 5px double;
   border-bottom: orange 5px double;
   height: 45px;
-  width: 800px;
+  width: 965px;
   display: flex;
   justify-content: center;
 }
@@ -243,6 +233,11 @@ hr.game-outline {
   margin: 2px 2px;
   padding: 8px 10px;
   cursor: pointer;
+  width: 30px;
+}
+
+#blank {
+  background-color: orange;
 }
 
 .action-buttons-container {
@@ -262,9 +257,9 @@ hr.game-outline {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
-  width: 100px;
-  margin: 20px;
+  height: 95px;
+  width: 95px;
+  margin: 10px 30px;
 }
 
 .button:hover {

@@ -4,7 +4,9 @@
 
 
 
+
 $('.start-game-button').on('click', domUpdates.hideWelcomeMessage);
+
 $('.start-game-button').on('click', createNewGame);
 // $('.start-game-button').on('click', displayCategory);
 $('.spin-button').on('click', spinWheel);
@@ -18,6 +20,7 @@ var round;
 var player1;
 var player2;
 var player3;
+var currentPlayer;
 var game;
 
 
@@ -62,8 +65,7 @@ function spinWheel() {
 //function selectedConsonantTurn('letter') {}
 
 
-//spin wheel function should call class wheel
-//call method wheel.spin to get value
+
 //if wheelvalue does not equal bankrupt or skip turn, then player can guess a letter
 //player guesses letter --> check if letter is in puzzle (puzzle.checkLetter('letter'))
 
