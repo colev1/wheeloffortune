@@ -12,11 +12,16 @@ const domUpdates = {
 
   checkLetter(event) {
     let letter = event.target.id;
-      if (puzzle.answer.includes(letter)) {
-        $(event.target).addClass('chosen-letter'); 
-
+    $(event.target).addClass('chosen-letter');
+        var tiles = $('.game-board-box');
+        for (var i=0; i<puzzle.answer.length; i++) {
+          if (puzzle.answer.charAt(i) === letter) {
+            $(tiles[i]).addClass('correct-letter');
+            $(tiles[i]).text(letter.toUpperCase());
       }
-    },
+    }
+  },
+
   displayVowels(event) {
     event.preventDefault();
     $('.vowel-popup').removeClass('hidden');
@@ -35,12 +40,7 @@ const domUpdates = {
       }
     }
   }
-}
-
-
-
-
-
+};
 
 if (typeof module !== 'undefined') {
   module.exports = domUpdates;

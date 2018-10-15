@@ -1,14 +1,7 @@
 
 // const game = new Game;
-
-
-
-
-
 $('.start-game-button').on('click', domUpdates.hideWelcomeMessage);
-
 $('.start-game-button').on('click', createNewGame);
-// $('.start-game-button').on('click', displayCategory);
 $('.spin-button').on('click', spinWheel);
 $('.solve-button').on('click', domUpdates.displaySolveInput);
 $('.vowel-button').on('click', domUpdates.displayVowels);
@@ -23,7 +16,6 @@ var player3;
 var currentPlayer;
 var game;
 
-
 function createNewGame() {
   round = new Round();
   game = new Game(round);
@@ -34,14 +26,8 @@ function createNewGame() {
   player3 = new Player();
   wheel.generateWheelValues();
   puzzleBankIndex = Math.floor(Math.random() * 4);
-  selectPuzzleBank(puzzleBankIndex);
-}
-
-function selectPuzzleBank(puzzleBankIndex) {
   puzzle = new Puzzle();
-  puzzle.generateNewPuzzle(puzzleBankIndex);
-  domUpdates.displayPuzzleCategory();
-  domUpdates.displayPuzzleBoard();
+  game.selectPuzzleBank(puzzleBankIndex);
 }
 
 function spinWheel() {
@@ -60,7 +46,6 @@ function spinWheel() {
 }
  
  
-
 //add event listeners to the player buttons, invoke their methods when clicked
 //function selectedConsonantTurn('letter') {}
 
@@ -69,14 +54,12 @@ function spinWheel() {
 //if wheelvalue does not equal bankrupt or skip turn, then player can guess a letter
 //player guesses letter --> check if letter is in puzzle (puzzle.checkLetter('letter'))
 
-
-
 $('.submit-guess-button').on('click', checkGuess);
 
 function checkGuess(event) {
   event.preventDefault();
   puzzle.checkGuess(event);
-  domUpdates.checkGuess();
+  // domUpdates.checkGuess();
 }
 
 
