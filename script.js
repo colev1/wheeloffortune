@@ -104,12 +104,7 @@ $('.letters').on('click', checkLetter);
 function checkLetter(event) {
   event.preventDefault();
   let letter = event.target.id;
-  // console.log(letter)
   puzzle.checkLetter(event, letter);
-  // if (puzzle.answer.includes(letter)) {
-  //   debugger;
-  //     event.target.hide(); 
-  //   }
 }
 
 
