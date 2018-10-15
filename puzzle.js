@@ -38,7 +38,7 @@ class Puzzle {
       }
 
     checkLetter(event, letter) {
-        if (puzzle.answer.includes(letter)) {
+        if (this.answer.includes(letter)) {
         $(event.target).hide(); 
         }
     }
