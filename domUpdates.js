@@ -20,6 +20,7 @@ const domUpdates = {
             $(tiles[i]).text(letter.toUpperCase());
       }
     }
+    //change player
   },
 
   displayVowels(event) {
@@ -39,8 +40,24 @@ const domUpdates = {
         $(tiles[i]).addClass('greyed');
       }
     }
+  },
+
+  enablePlayerButtons() {
+    $('.button').prop('disabled', false);
+  },
+
+  disablePlayerButtons() {
+    $('.button').prop('disabled', true);
+  },
+
+  enableSolveButton() {
+  if ($('.solve-input').val() === '') {
+    $('.submit-guess-button').prop('disabled', true);
+    } else {
+    $('.submit-guess-button').prop('disabled', false);
   }
-};
+  }
+}
 
 if (typeof module !== 'undefined') {
   module.exports = domUpdates;

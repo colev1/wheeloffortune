@@ -20,7 +20,7 @@ class Wheel {
 
   displayWheelValue() {
     $('.value-display').text('SPIN VALUE: ' + wheel.currentWheelElement);
-  }
+    }
  }
 
 if (typeof module !== 'undefined') {
