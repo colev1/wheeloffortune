@@ -3,6 +3,7 @@ class Game {
 		this.round = round;
 	}
 
+
 	resetGame() {
 
 	}

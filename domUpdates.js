@@ -22,10 +22,10 @@ const domUpdates = {
       round.changePlayer();
     },
 
-  displayVowels(event) {
-    event.preventDefault();
-    $('.vowel-popup').removeClass('hidden');
-  },
+  // displayVowels(event) {
+  //   event.preventDefault();
+  //   $('.vowel-popup').removeClass('hidden');
+  // },
 
   displaySolveInput(event) {
     event.preventDefault();

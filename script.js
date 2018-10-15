@@ -26,7 +26,7 @@ function createNewGame() {
   wheel.generateWheelValues();
   puzzleBankIndex = Math.floor(Math.random() * 4);
   puzzle = new Puzzle();
-  game.selectPuzzleBank(puzzleBankIndex);
+  puzzle.selectPuzzleBank(puzzleBankIndex);
   domUpdates.enablePlayerButtons();
 }
 
