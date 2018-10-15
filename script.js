@@ -38,6 +38,7 @@ function selectPuzzleBank(puzzleBankIndex) {
   puzzle = new Puzzle();
   puzzle.generateNewPuzzle(puzzleBankIndex);
   domUpdates.displayPuzzleCategory();
+  domUpdates.displayPuzzleBoard();
 }
 
 function spinWheel() {
@@ -72,8 +73,8 @@ $('.submit-guess-button').on('click', checkGuess);
 
 function checkGuess(event) {
   event.preventDefault();
-  let playerGuess = $('.solve-input').val().toLowerCase();
-  puzzle.checkGuess(playerGuess);
+  puzzle.checkGuess(event);
+  domUpdates.checkGuess();
 }
 
 

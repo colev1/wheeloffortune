@@ -24,8 +24,19 @@ const domUpdates = {
   displaySolveInput(event) {
     event.preventDefault();
     $('.solve-button-form').removeClass('hidden');
-}
+  },
+  checkGuess() {
+    let playerGuess = $('.solve-input').val().toLowerCase();
+  },
 
+  displayPuzzleBoard() {
+    var tiles = $('.game-board-box');
+    for (var i=0; i<puzzle.answer.length; i++) {
+      if (puzzle.answer.charAt(i) !== ' ') {
+        $(tiles[i]).addClass('greyed');
+      }
+    }
+  }
 }
 
 

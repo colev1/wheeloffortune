@@ -7,15 +7,12 @@ class Puzzle {
 	generateNewPuzzle(puzzleBankIndex) {
     let puzzleBankArray = [ 'one_word_answers', 'two_word_answers', 'three_word_answers', 'four_word_answers'];
     var puzzleBankofGame = puzzleBankArray[puzzleBankIndex];
-    debugger;
     var chosenBankArray = data.puzzles[puzzleBankofGame].puzzle_bank;
     var selectedPuzzle = chosenBankArray[Math.floor(Math.random() * chosenBankArray.length)];
     this.category = selectedPuzzle.category;
     this.letters = selectedPuzzle.total_number_of_letters;
     this.answer = selectedPuzzle.correct_answer.toLowerCase();
 	};
-
-
 
   displayPuzzleBoard () {
   for (var i=0; i < this.answer.length; i++) {
@@ -26,10 +23,13 @@ class Puzzle {
   }
 }
 
-    checkGuess(playerGuess) {
+    checkGuess(event) {
     //check if input field is equal to the puzzle
     // if ()
     //if true, round = new round; puzzle = new puzzle(),
+    debugger;
+    event.preventDefault();
+    let playerGuess = $('.solve-input').val().toLowerCase();
       if (playerGuess === puzzle.answer) {
       console.log('You solved it!');
       puzzle = new Puzzle();
