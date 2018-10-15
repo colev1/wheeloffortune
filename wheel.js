@@ -19,9 +19,8 @@ class Wheel {
 	}
 
   displayWheelValue() {
-    $('.value-display').text('Wheel Value: ' + wheel.currentWheelElement);
+    $('.value-display').text('SPIN VALUE: ' + wheel.currentWheelElement);
   }
-
  }
 
 if (typeof module !== 'undefined') {
