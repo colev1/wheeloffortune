@@ -1,4 +1,4 @@
-
+sx
 // const game = new Game;
 
 
@@ -43,12 +43,19 @@ function selectPuzzleBank(puzzleBankIndex) {
 }
 
 function spinWheel() {
-  wheel.spinWheel();
+  let newWheelValue = wheel.spinNewWheel();
+  if (newWheelValue === 'Bankrupt') {
+    player1.scoreBankrupt();
+  }
+  if (newWheelValue === 'Lose a Turn') {
+    player1.isTurn();
+    // player.nextPlayer(); - Need to determine
+    //how we move through the players and where that lives
+    //Recommend either Game or round class
+  }
 }
  
- //if the value of the wheel is bankrupt, score of player is 0;
-  //moves on to next player
-  //if the value of the wheel is lose a turn, the player turn is over, moves to next playe 
+ 
 
 //add event listeners to the player buttons, invoke their methods when clicked
 //function selectedConsonantTurn('letter') {}

@@ -21,6 +21,8 @@ class Player {
 	takeTurn() {
 		this.isTurn = true;
 	}
+  //recommend moving through turns lives in
+  //Game or Round class
 
 }
 

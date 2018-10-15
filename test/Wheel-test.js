@@ -21,6 +21,6 @@ describe ('Wheel', function() {
   });
 
   it('should spin', function() {
-    wheel.spin()
+    wheel.spinNewWheel()
   });
 })
