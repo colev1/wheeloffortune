@@ -10,6 +10,12 @@ class Game {
 		// return round = new Round();
 		
 		}
+
+		selectPuzzleBank(puzzleBankIndex) {
+  		puzzle.generateNewPuzzle(puzzleBankIndex);
+  		domUpdates.displayPuzzleCategory();
+  		domUpdates.displayPuzzleBoard();
+		}
 	};
 
 

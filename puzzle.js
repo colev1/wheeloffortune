@@ -11,17 +11,10 @@ class Puzzle {
     var selectedPuzzle = chosenBankArray[Math.floor(Math.random() * chosenBankArray.length)];
     this.category = selectedPuzzle.category;
     this.letters = selectedPuzzle.total_number_of_letters;
-    this.answer = selectedPuzzle.correct_answer.toLowerCase();
+    var answer = selectedPuzzle.correct_answer.toLowerCase().replace(/-/g, " ");
+    this.answer = answer;
+    console.log(this);
 	};
-
-  displayPuzzleBoard () {
-  for (var i=0; i < this.answer.length; i++) {
-    console.log(this.answer.charAt(i));
-    if (this.answer.charAt(i) === "a") {
-    console.log('hi');
-    }
-  }
-}
 
     checkGuess(event) {
     //check if input field is equal to the puzzle
@@ -31,7 +24,18 @@ class Puzzle {
     let playerGuess = $('.solve-input').val().toLowerCase();
       if (playerGuess === puzzle.answer) {
       console.log('You solved it!');
-      puzzle = new Puzzle();
+      round = new Round();
+      // puzzle = new Puzzle();
+      // puzzle.generateNewPuzzle(puzzleBankIndex);
+      
+      //displays guess when the puzzle is solved 
+      for (var i=0; i<puzzle.answer.length; i++) {
+           var tiles = $('.game-board-box');
+           var letter = puzzle.answer.charAt(i);
+            $(tiles[i]).addClass('correct-letter');
+            $(tiles[i]).text(letter.toUpperCase());
+          
+        }
       } else {
       console.log('Wrong!');
       }
