@@ -4,6 +4,12 @@ class Puzzle {
     this.category = category || '';
 	}
 
+  selectPuzzleBank(puzzleBankIndex) {
+      puzzle.generateNewPuzzle(puzzleBankIndex);
+      domUpdates.displayPuzzleCategory();
+      domUpdates.displayPuzzleBoard();
+    }
+
 	generateNewPuzzle(puzzleBankIndex) {
     let puzzleBankArray = [ 'one_word_answers', 'two_word_answers', 'three_word_answers', 'four_word_answers'];
     var puzzleBankofGame = puzzleBankArray[puzzleBankIndex];

@@ -23,10 +23,10 @@ const domUpdates = {
     //change player
   },
 
-  displayVowels(event) {
-    event.preventDefault();
-    $('.vowel-popup').removeClass('hidden');
-  },
+  // displayVowels(event) {
+  //   event.preventDefault();
+  //   $('.vowel-popup').removeClass('hidden');
+  // },
 
   displaySolveInput(event) {
     event.preventDefault();
