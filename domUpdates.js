@@ -19,9 +19,8 @@ const domUpdates = {
             $(tiles[i]).addClass('correct-letter');
             $(tiles[i]).text(letter.toUpperCase());
       }
-    }
-    //change player
-  },
+      round.changePlayer();
+    },
 
   // displayVowels(event) {
   //   event.preventDefault();

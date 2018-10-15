@@ -1,9 +1,8 @@
 class Player {
-	constructor(name, grandTotal) {
+	constructor(name, totalScore) {
 		this.name = name;
 		this.roundScore = 0;
 		this.totalScore = 0;
-		this.isTurn = false;
 	}
 	
 	incrementRoundScore(roundScore) {
@@ -18,12 +17,6 @@ class Player {
   	this.roundScore = 0;
   }
 
-	takeTurn() {
-		this.isTurn = true;
-	}
-  //recommend moving through turns lives in
-  //Game or Round class
-
 }
 
  if (typeof module !== 'undefined') {
@@ -31,5 +24,3 @@ class Player {
 }
 
 
-//want to create an id on each player, so we can target htem and give them a class of active when it is their turn 
-//add the id to the player if it is their turn
