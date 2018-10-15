@@ -13,7 +13,8 @@ const domUpdates = {
   checkLetter(event) {
     let letter = event.target.id;
       if (puzzle.answer.includes(letter)) {
-        $(event.target).hide(); 
+        $(event.target).addClass('chosen-letter'); 
+
       }
     },
   displayVowels(event) {
@@ -24,9 +25,6 @@ const domUpdates = {
   displaySolveInput(event) {
     event.preventDefault();
     $('.solve-button-form').removeClass('hidden');
-  },
-  checkGuess() {
-    let playerGuess = $('.solve-input').val().toLowerCase();
   },
 
   displayPuzzleBoard() {

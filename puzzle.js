@@ -27,7 +27,6 @@ class Puzzle {
     //check if input field is equal to the puzzle
     // if ()
     //if true, round = new round; puzzle = new puzzle(),
-    debugger;
     event.preventDefault();
     let playerGuess = $('.solve-input').val().toLowerCase();
       if (playerGuess === puzzle.answer) {
