@@ -16,6 +16,7 @@ const domUpdates = {
         $(event.target).addClass('chosen-letter'); 
 
       }
+      round.changePlayer();
     },
   displayVowels(event) {
     event.preventDefault();

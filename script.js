@@ -25,13 +25,11 @@ var game;
 
 
 function createNewGame() {
-  round = new Round();
-  game = new Game(round);
+  player1 = new Player(1);
+  player2 = new Player(2);
+  player3 = new Player(3);
+  round = new Round(player1, player2, player3);
   wheel = new Wheel();
-  game.startGame();
-  player1 = new Player();
-  player2 = new Player();
-  player3 = new Player();
   wheel.generateWheelValues();
   puzzleBankIndex = Math.floor(Math.random() * 4);
   selectPuzzleBank(puzzleBankIndex);
@@ -47,16 +45,27 @@ function selectPuzzleBank(puzzleBankIndex) {
 function spinWheel() {
   let newWheelValue = wheel.spinNewWheel();
   wheel.displayWheelValue();
-
-  if (newWheelValue === 'Bankrupt') {
-    player1.scoreBankrupt();
+  if (newWheelValue === 'BANKRUPT') {
+    round.currentPlayer.scoreBankrupt();
+    round.changePlayer();
   }
-  if (newWheelValue === 'Lose a Turn') {
-    player1.isTurn();
+  if (newWheelValue === 'LOSE A TURN') {
+    round.changePlayer();
     // player.nextPlayer(); - Need to determine
     //how we move through the players and where that lives
     //Recommend either Game or round class
   }
+}
+
+function createNewRound() {
+  round = new Round()
+  wheel = new Wheel();
+  player1 = new Player();
+  player2 = new Player();
+  player3 = new Player();
+  wheel.generateWheelValues();
+  puzzleBankIndex = Math.floor(Math.random() * 4);
+  selectPuzzleBank(puzzleBankIndex);
 }
  
  
