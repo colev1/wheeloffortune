@@ -4,6 +4,7 @@
 
 body {
   display: grid;
+  font-family: sans-serif;
   grid-template-rows: auto;
   background-size: cover;
   background-image: url('images/disco.jpg');
@@ -326,6 +327,11 @@ hr.game-outline {
   color: white;
 }
 
-
-
-
+.correct-letter {
+  font-size: 72px;
+  font-family: sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
