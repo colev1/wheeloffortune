@@ -5,7 +5,7 @@ $('.start-game-button').on('click', createNewGame);
 $('.spin-button').on('click', spinWheel);
 $('.solve-button').on('click', domUpdates.displaySolveInput);
 $('.vowel-button').on('click', domUpdates.highlightVowels);
-$('.vowel').on('click', domUpdates.unhilightVowels);
+$('.vowel').on('click', domUpdates.unhighlightVowels);
 $('.letters').on('click', domUpdates.checkLetter);
 $('.solve-input').on('keyup', domUpdates.enableSolveButton);
 
@@ -64,12 +64,12 @@ function createNewRound() {
   wheel.generateWheelValues();
   puzzleBankIndex = Math.floor(Math.random() * 4);
   selectPuzzleBank(puzzleBankIndex);
+
 }
  
  
 //add event listeners to the player buttons, invoke their methods when clicked
 //function selectedConsonantTurn('letter') {}
-
 
 
 //if wheelvalue does not equal bankrupt or skip turn, then player can guess a letter

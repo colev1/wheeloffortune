@@ -28,7 +28,7 @@ class Puzzle {
     event.preventDefault();
     let playerGuess = $('.solve-input').val().toLowerCase();
     if (playerGuess === puzzle.answer) {
-      console.log('You solved it!');
+      $('.player-turn-display').text(`You solved it!!`);
       
       for (var i = 0; i < puzzle.answer.length; i++) {
         var tiles = $('.game-board-box');
@@ -37,6 +37,7 @@ class Puzzle {
         $(tiles[i]).text(letter.toUpperCase());  
       }
       setTimeout(() => {
+        // createNewRound();
         domUpdates.resetPuzzleBoard();
         domUpdates.resetLetters();
         puzzle.generateNewPuzzle(puzzleBankIndex);
@@ -44,8 +45,13 @@ class Puzzle {
       }, 3000);
       
     } else {
-      console.log('Wrong!');
       //go to next player
+      $('.player-turn-display').text('That is incorrect!');
+      setTimeout(() => {
+        //display it is next players turn
+        round.changePlayer();
+        round.displayCurrentPlayerTurn();
+      }, 2000);
     }
     $('.solve-button-form').addClass('hidden');
   }

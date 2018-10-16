@@ -14,6 +14,10 @@ class Round {
     } else {
       this.currentPlayer = this.players[this.counter]
     }
+  };
+
+  displayCurrentPlayerTurn() {
+    $('.player-turn-display').text(`Player ${round.currentPlayer.name}.. your turn!`);
   }
 }
 
