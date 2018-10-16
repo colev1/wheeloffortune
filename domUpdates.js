@@ -13,14 +13,18 @@ const domUpdates = {
   checkLetter(event) {
     let letter = event.target.id;
     $(event.target).addClass('chosen-letter');
-        var tiles = $('.game-board-box');
-        for (var i=0; i<puzzle.answer.length; i++) {
-          if (puzzle.answer.charAt(i) === letter) {
-            $(tiles[i]).addClass('correct-letter');
-            $(tiles[i]).text(letter.toUpperCase());
+    var tiles = $('.game-board-box');
+    
+    for (var i=0; i<puzzle.answer.length; i++) {
+      if (puzzle.answer.charAt(i) === letter) {
+        $(tiles[i]).addClass('correct-letter');
+        $(tiles[i]).text(letter.toUpperCase());
+        // currentPlayer.incrementRoundScore(wheel.currentWheelElement);
       }
-      round.changePlayer();
-    },
+      // currentPlayer.incrementRoundScore(wheel.currentWheelElement); 
+    }
+    round.changePlayer();
+  },
 
   // displayVowels(event) {
   //   event.preventDefault();

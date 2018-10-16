@@ -7,6 +7,7 @@ class Player {
 	
 	incrementRoundScore(roundScore) {
 		this.roundScore += roundScore;
+    player.displayRoundScore();
 	}
 
 	cumulateTotalScore(roundScore) {
@@ -16,6 +17,10 @@ class Player {
   scoreBankrupt() {
   	this.roundScore = 0;
   }
+
+  displayRoundScore() {
+     $('.round-money').text('$ ' + wheel.currentWheelElement);
+    }
 
 }
 

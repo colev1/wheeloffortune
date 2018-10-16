@@ -8,17 +8,13 @@ class Round {
 
   changePlayer() {
     this.counter++;
-    console.log('hi');
     if (!this.players[this.counter]) {
       this.counter = 0;
       this.currentPlayer = this.players[this.counter]
     } else {
       this.currentPlayer = this.players[this.counter]
     }
-    console.log(this.currentPlayer);
   }
-  
-
 }
 
 if (typeof module !== 'undefined') {

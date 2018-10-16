@@ -23,9 +23,9 @@ function createNewGame() {
   player3 = new Player(3);
   round = new Round(player1, player2, player3);
   wheel = new Wheel();
+  puzzle = new Puzzle();
   wheel.generateWheelValues();
   puzzleBankIndex = Math.floor(Math.random() * 4);
-  puzzle = new Puzzle();
   puzzle.selectPuzzleBank(puzzleBankIndex);
   domUpdates.enablePlayerButtons();
 }
