@@ -29,7 +29,7 @@ class Puzzle {
     let playerGuess = $('.solve-input').val().toLowerCase();
     if (playerGuess === puzzle.answer) {
       console.log('You solved it!');
-      // createNewRound();
+      
       for (var i = 0; i < puzzle.answer.length; i++) {
         var tiles = $('.game-board-box');
         var letter = puzzle.answer.charAt(i);
@@ -38,6 +38,7 @@ class Puzzle {
       }
       setTimeout(() => {
         domUpdates.resetPuzzleBoard();
+        domUpdates.resetLetters();
         puzzle.generateNewPuzzle(puzzleBankIndex);
         puzzle.selectPuzzleBank(puzzleBankIndex);
       }, 3000);

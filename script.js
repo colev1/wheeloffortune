@@ -4,8 +4,8 @@ $('.start-game-button').on('click', domUpdates.hideWelcomeMessage);
 $('.start-game-button').on('click', createNewGame);
 $('.spin-button').on('click', spinWheel);
 $('.solve-button').on('click', domUpdates.displaySolveInput);
-$('.vowel-button').on('click', domUpdates.displayVowels);
-$('.vowels').on('click', domUpdates.checkLetter);
+$('.vowel-button').on('click', domUpdates.highlightVowels);
+$('.vowel').on('click', domUpdates.unhilightVowels);
 $('.letters').on('click', domUpdates.checkLetter);
 $('.solve-input').on('keyup', domUpdates.enableSolveButton);
 
