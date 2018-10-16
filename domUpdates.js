@@ -21,7 +21,13 @@ const domUpdates = {
         $(tiles[i]).text(letter.toUpperCase());
       }
     }
-    round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
+      if ($(event.target).hasClass('vowel')) {
+        round.currentPlayer.roundScore -= 100;
+        round.currentPlayer.displayRoundScore();
+      } else {
+      round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
+
+    };
     round.changePlayer();
   },
 
