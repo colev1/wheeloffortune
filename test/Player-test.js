@@ -12,18 +12,19 @@ describe ('Player', function() {
     expect(true).to.equal(true);
   })
 
-  it('should increment the players round score when the round is over' function() {
+  it('should increment the players round score when the round is over', function() {
     player.incrementRoundScore();
     expect.equal(player.incrementRoundScore, 200);
   })
 
-  it('should add up total score at the end of the game' function() {
+  it('should add up total score at the end of the game', function() {
     player.cumulateTotalScore();
     expect.equal(player.cumulateTotalScore, 1000);
   })
 
-  it('should bankrupt the player when they land on that value' function() {
+  it('should bankrupt the player when they land on that value', function() {
     player.scoreBankrupt();
     expect.equal(player.scoreBankrupt, 0);
   })
 })
+

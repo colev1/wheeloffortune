@@ -198,7 +198,7 @@ hr.game-outline {
   padding: 5px 0px 5px 0px;
 }
 
-.value-display {
+.value-display, .player-turn-display {
   width: 250px;
   height: 40px;
   border: orange 5px double;
@@ -207,6 +207,8 @@ hr.game-outline {
   font-size: 16px;
   padding: 5px;
 }
+
+
 
 .letter-bank-container {
   align-items: center;
