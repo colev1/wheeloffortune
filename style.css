@@ -198,15 +198,22 @@ hr.game-outline {
   padding: 5px 0px 5px 0px;
 }
 
-.value-display {
+.value-display, .player-turn-display {
   width: 250px;
   height: 40px;
   border: orange 5px double;
+  background-color: #E3F1F3;
+  font-weight: bold;
   margin-left: 5px;
   text-align: center;
   font-size: 16px;
   padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
+
+
 
 .letter-bank-container {
   align-items: center;
@@ -235,6 +242,9 @@ hr.game-outline {
   padding: 8px 10px;
   cursor: pointer;
   width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
 
 #blank {
@@ -328,10 +338,20 @@ hr.game-outline {
 }
 
 .correct-letter {
-  font-size: 72px;
+  font-size: 66px;
   font-family: sans-serif;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.highlight-vowels {
+  background-color: white;
+  border-color: #9ecaed;
+    box-shadow: 1px 1px 20px #01A869;;
+}
+
+.inactive {
+  background-color: #C0C0C0;
 }

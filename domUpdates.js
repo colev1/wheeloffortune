@@ -13,19 +13,16 @@ const domUpdates = {
   checkLetter(event) {
     let letter = event.target.id;
     $(event.target).addClass('chosen-letter');
-        var tiles = $('.game-board-box');
-        for (var i=0; i<puzzle.answer.length; i++) {
-          if (puzzle.answer.charAt(i) === letter) {
-            $(tiles[i]).addClass('correct-letter');
-            $(tiles[i]).text(letter.toUpperCase());
+    var tiles = $('.game-board-box');
+    for (var i = 0; i < puzzle.answer.length; i++) {
+      if (puzzle.answer.charAt(i) === letter) {
+        $(tiles[i]).addClass('correct-letter');
+        $(tiles[i]).text(letter.toUpperCase());
       }
-      round.changePlayer();
-    },
+    }
+    round.changePlayer();
+  },
 
-  // displayVowels(event) {
-  //   event.preventDefault();
-  //   $('.vowel-popup').removeClass('hidden');
-  // },
 
   displaySolveInput(event) {
     event.preventDefault();
@@ -34,10 +31,19 @@ const domUpdates = {
 
   displayPuzzleBoard() {
     var tiles = $('.game-board-box');
-    for (var i=0; i<puzzle.answer.length; i++) {
+    for (var i = 0; i < puzzle.answer.length; i++) {
       if (puzzle.answer.charAt(i) !== ' ') {
         $(tiles[i]).addClass('greyed');
       }
+    }
+  },
+
+  resetPuzzleBoard() {
+    var tiles = $('.game-board-box');
+    for (var i = 0; i < puzzle.answer.length; i++) {
+      // if (puzzle.answer.charAt(i) !== ' ') {
+        $(tiles[i]).removeClass('greyed');
+        $(tiles[i]).text('');
     }
   },
 
@@ -50,12 +56,48 @@ const domUpdates = {
   },
 
   enableSolveButton() {
-  if ($('.solve-input').val() === '') {
-    $('.submit-guess-button').prop('disabled', true);
+    if ($('.solve-input').val() === '') {
+      $('.submit-guess-button').prop('disabled', true);
     } else {
-    $('.submit-guess-button').prop('disabled', false);
+      $('.submit-guess-button').prop('disabled', false);
+    }
+  },
+
+  displayPlayerTurn() {
+    $('.player-turn-display').text('Player 1.. your turn!');
+    },
+
+  highlightVowels() {
+
+    let vowels = $('.vowel');
+    vowels.each(function()  {
+      $(this).addClass('highlight-vowels');
+    });
+
+    let consonants = $('.letters').not('.vowel');
+    consonants.each(function()  {
+      $(this).addClass('inactive');
+    });
+  },
+
+  unhilightVowels() {
+    let vowels = $('.vowel');
+    vowels.each(function()  {
+      $(this).removeClass('highlight-vowels');
+    });
+
+    let consonants = $('.letters').not('.vowel');
+    consonants.each(function()  {
+      $(this).removeClass('inactive');
+    });
+  },
+
+  resetLetters() {
+    //change the styling of each letter back to the original once the puzzle is reloaded
+    $('.letters').removeClass('chosen-letter');
+
   }
-  }
+
 }
 
 if (typeof module !== 'undefined') {
