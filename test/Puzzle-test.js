@@ -26,20 +26,31 @@ describe ('Puzzle', function() {
 
   it('should be able to generate a new puzzle using the puzzle bank index', function() {
   
-    puzzle.generateNewPuzzle();
+    puzzle.generateNewPuzzle(3);
     // expect(puzzle.category).to.not.equal('');
     expect(selectedPuzzle).to.exist();
   });
 
-  it('should assign a category to puzzle once generate puzzle is invoked', function() {
-    puzzle.generateNewPuzzle();
-    expect(this.category).to.equal(selectedPuzzle.category);
+  describe ('Puzzle method generate new puzzle', function() {
+
+    beforeEach(function () {
+      puzzle.generateNewPuzzle();
+    });
+
+    it('should assign category, letters, answer, num words properties to puzzle', function() {
+    expect(puzzle.category).to.exist;
+    expect(puzzle.letters).to.exist;
   });
+  })
+  
 
   it('should be able to check the guess input against the answer', function() {
     // puzzle.checkGuess('Silly willy');
-    
   });
+
+  // it('should ', function() {
+
+  // })
 
 
 
