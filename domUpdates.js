@@ -14,13 +14,13 @@ const domUpdates = {
     let letter = event.target.id;
     $(event.target).addClass('chosen-letter');
     var tiles = $('.game-board-box');
-
     for (var i = 0; i < puzzle.answer.length; i++) {
       if (puzzle.answer.charAt(i) === letter) {
         $(tiles[i]).addClass('correct-letter');
         $(tiles[i]).text(letter.toUpperCase());
       }
     }
+
       if ($(event.target).hasClass('vowel')) {
         round.currentPlayer.roundScore -= 100;
         round.currentPlayer.displayRoundScore();
@@ -28,7 +28,9 @@ const domUpdates = {
       round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
 
     };
+
     round.changePlayer();
+    round.displayCurrentPlayerTurn();
   },
 
 
@@ -92,7 +94,7 @@ const domUpdates = {
     });
   },
 
-  unhilightVowels() {
+  unhighlightVowels() {
     let vowels = $('.vowel');
     vowels.each(function()  {
       $(this).removeClass('highlight-vowels');
