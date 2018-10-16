@@ -1,4 +1,4 @@
-
+// 
 // const game = new Game;
 $('.start-game-button').on('click', domUpdates.hideWelcomeMessage);
 $('.start-game-button').on('click', createNewGame);

@@ -38,6 +38,16 @@ const domUpdates = {
     }
   },
 
+  resetPuzzleBoard() {
+    var tiles = $('.game-board-box');
+    for (var i = 0; i < puzzle.answer.length; i++) {
+      // if (puzzle.answer.charAt(i) !== ' ') {
+        $(tiles[i]).removeClass('greyed');
+        $(tiles[i]).text('');
+      // }
+    }
+  },
+
   enablePlayerButtons() {
     $('.button').prop('disabled', false);
   },

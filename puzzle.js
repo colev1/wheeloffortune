@@ -36,8 +36,12 @@ class Puzzle {
         $(tiles[i]).addClass('correct-letter');
         $(tiles[i]).text(letter.toUpperCase());  
       }
-      puzzle.generateNewPuzzle(puzzleBankIndex);
-      puzzle.selectPuzzleBank(puzzleBankIndex);
+      setTimeout(() => {
+        domUpdates.resetPuzzleBoard();
+        puzzle.generateNewPuzzle(puzzleBankIndex);
+        puzzle.selectPuzzleBank(puzzleBankIndex);
+      }, 3000);
+      
     } else {
       console.log('Wrong!');
       //go to next player
