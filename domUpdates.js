@@ -1,4 +1,4 @@
-
+i
 const domUpdates = {
 
   hideWelcomeMessage(event) {
@@ -19,10 +19,9 @@ const domUpdates = {
       if (puzzle.answer.charAt(i) === letter) {
         $(tiles[i]).addClass('correct-letter');
         $(tiles[i]).text(letter.toUpperCase());
-        // currentPlayer.incrementRoundScore(wheel.currentWheelElement);
       }
-      // currentPlayer.incrementRoundScore(wheel.currentWheelElement); 
     }
+        round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
     round.changePlayer();
   },
 

@@ -45,6 +45,16 @@ function spinWheel() {
   }
 }
 
+  // function displayRoundScore() {
+  //   // know in this function, which player scored
+  //   // player-1, player-2, player-3
+
+  //   // article player-${this.name} interpolate
+
+  //   // this.name = 1|2|3
+  //   $('.round-money').text('$ ' + currentPlayer.roundScore());
+  // }
+
 function createNewRound() {
   round = new Round()
   wheel = new Wheel();
