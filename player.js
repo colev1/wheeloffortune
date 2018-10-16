@@ -26,7 +26,7 @@ class Player {
     // article player-${this.name} interpolate
 
     // this.name = 1|2|3
-    $('.round-money').text('$ ' + this.roundScore);
+    $(`.round-money-${round.currentPlayer.name}`).text('$ ' + this.roundScore);
   }
 
 }

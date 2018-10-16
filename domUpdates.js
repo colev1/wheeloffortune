@@ -21,9 +21,7 @@ const domUpdates = {
         $(tiles[i]).text(letter.toUpperCase());
       }
     }
-
-        round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
-
+    round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
     round.changePlayer();
   },
 
@@ -70,6 +68,10 @@ const domUpdates = {
   displayPlayerTurn() {
     $('.player-turn-display').text('Player 1.. your turn!');
     },
+
+  highlightCurrentAvatarTurn() {
+    $('.avatar').addClass('.highlight-avatar');
+  },
 
   highlightVowels() {
 
