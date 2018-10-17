@@ -37,7 +37,25 @@ class Puzzle {
         $(tiles[i]).text(letter.toUpperCase());  
       }
       setTimeout(() => {
-        round.newRound();
+        if (round.currentRound === 4) {
+          debugger;
+          let playersObj = [
+          {name: 'player1', score: player1.totalScore},
+          {name: 'player2', score: player2.totalScore}, 
+          {name: 'player3', score: player3.totalScore} ];
+
+          let highestScore = Math.max(player1.totalScore, player2.totalScore, player3.totalScore);
+          let winningPlayer = playersObj.find((currentPlayer) => {
+            return currentPlayer.score === highestScore;
+          });
+          
+          // let winner = playersArr[]
+          bonusRound.newRound(winner);
+          wheel.generateBonusWheel();
+        } else {
+          round.newRound();
+        }
+        
       }, 3000);
       
     } else {
@@ -52,7 +70,11 @@ class Puzzle {
     }
     $('.solve-button-form').addClass('hidden');
   }
-}  
+};
+
+class bonusPuzzle extends Puzzle {
+
+}
 
 if (typeof module !== 'undefined') {
   module.exports = Puzzle;
