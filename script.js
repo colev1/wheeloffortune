@@ -35,6 +35,8 @@ function spinWheel() {
   wheel.displayWheelValue();
   if (newWheelValue === 'BANKRUPT') {
     round.currentPlayer.scoreBankrupt();
+    domUpdates.disableVowels();
+    domUpdates.disableConsonants();
     setTimeout(() => { 
       round.changePlayer();
       round.highlightCurrentPlayerTurn(); 
@@ -43,6 +45,8 @@ function spinWheel() {
     }, 1600);
   }
   if (newWheelValue === 'LOSE A TURN') {
+    domUpdates.disableVowels();
+    domUpdates.disableConsonants();
     setTimeout(() => {
       round.changePlayer();
       round.highlightCurrentPlayerTurn(); 

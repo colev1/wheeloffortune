@@ -4,7 +4,7 @@ class Round {
     this.players = [player1, player2, player3];
     this.currentPlayer = player1;
     this.counter = 0;
-    this.previousPlayer = player1
+    this.previousPlayer = player1;
   }
 
   changePlayer() {
@@ -37,6 +37,7 @@ class Round {
   }
 
   newRound() {
+    domUpdates.resetRoundScores();
     domUpdates.resetPuzzleBoard();
     domUpdates.resetLetters();
     puzzle.selectPuzzleBank(puzzleBankIndex);
@@ -49,6 +50,7 @@ class Round {
   };
 
   createBonusRound() {
+    
   }
 }
 

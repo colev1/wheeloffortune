@@ -1,7 +1,7 @@
 class Wheel {
 	constructor() {
 		this.wheelElements = [];
-    this.currentWheelElement = this.wheelElements[0]
+    this.currentWheelElement = this.wheelElements[0];
 	}
 	
   generateWheelValues() {

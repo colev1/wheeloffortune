@@ -3,10 +3,12 @@
     "browser": true,
     "commonjs": true,
     "es6": true,
-    "mocha": true
+    "mocha": true,
+    "jquery": true
   },
   "extends": "eslint:recommended",
-  "parserOptions": { "sourceType": "module" },
+  "parserOptions": { "sourceType": "module",
+    "ecmaVersion": 6 },
   "rules": {
     "eqeqeq": ["error", "always"],
     "brace-style": "error",
