@@ -3,11 +3,6 @@ class Game {
 		this.round = round;
 	}
 
-
-	resetGame() {
-
-	}
-	
 	quitGame() {
 
 	}

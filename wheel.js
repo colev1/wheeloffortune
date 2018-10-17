@@ -21,7 +21,23 @@ class Wheel {
   displayWheelValue() {
     $('.value-display').text('Spin Value: ' + wheel.currentWheelElement);
     }
- }
+ 
+  generateBonusWheel() {
+    this.wheelElements = [
+      20000,
+      'A NEW CAR',
+      15000,
+      'A TURING CERTIFICATE',
+      5000,
+      'A NEW BEDROOM SET',
+      100000,
+      'VIKING RIVER CRUISE',
+      10000,
+      'A NEW HOUSE'
+      ];
+      return this.wheelElements;
+  }   
+}
 
 if (typeof module !== 'undefined') {
   module.exports = Wheel;
