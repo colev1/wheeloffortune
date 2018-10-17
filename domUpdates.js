@@ -7,7 +7,7 @@ const domUpdates = {
   },
 
   displayPuzzleCategory() {
-    $('.category-display').text('Category: ' + puzzle.category);
+    $('.category-display').text(puzzle.category);
   },
 
   checkLetter(event) {
@@ -28,8 +28,8 @@ const domUpdates = {
       round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
 
     };
-
     round.changePlayer();
+    round.highlightCurrentPlayerTurn(); 
     round.displayCurrentPlayerTurn();
   },
 
@@ -74,11 +74,11 @@ const domUpdates = {
   },
 
   displayPlayerTurn() {
-    $('.player-turn-display').text('Player 1.. your turn!');
+    $('.player-turn-display').text('Player 1...your turn!');
     },
 
-  highlightCurrentAvatarTurn() {
-    $('.avatar').addClass('.highlight-avatar');
+  highlightAvatarTurn() {
+    $('.avatar1').addClass('highlight-avatar');
   },
 
   highlightVowels() {

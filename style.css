@@ -7,12 +7,13 @@ body {
   font-family: sans-serif;
   grid-template-rows: auto;
   background-size: cover;
+   background-repeat: no-repeat;
   background-image: url('images/disco.jpg');
 }
 
 .welcome-message {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   background-image: linear-gradient(#A8F2F9, #01A869);
   border: 10px solid orange;
   height: 70%;
@@ -63,7 +64,7 @@ body {
   height: 75px;
   width: 210px;
   display: flex;
-  font-size: 20px;
+  font-size: 16px;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -102,7 +103,7 @@ body {
 }
 
 .player-name {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .name-bank {
@@ -114,7 +115,7 @@ body {
 }
 
 .round-money{
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .board-container {
@@ -146,27 +147,7 @@ body {
 }
 
 hr {
-  border: #A8F2F9 2px solid;
-  width: 800px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.lights {
-  display: flex;
-  justify-content: center;
-}
-
-.light-circle {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: orange;
-  margin: 0px 22px;
-}
-
-hr.game-outline {
-  border: #A8F2F9 2px solid;
+  border: orange 7px double;
   width: 800px;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -175,19 +156,26 @@ hr.game-outline {
 .category-container {
   align-items: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   padding: 15px 0px 0px 0px;
+  margin-top: 14px;
 }
 
 .category-display {
   width: 250px;
-  height: 40px;
-  border: orange 5px double;
-  margin-left: 5px;
+  height: 35px;
+  border: orange 3px solid;
+  margin-left: -3px;
   text-align: center;
   font-size: 16px;
-  padding: 5px;
+  padding: 7px;
+  background-color: #E3F1F3;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  position: absolute;
+  border-radius: 5px;
 }
 
 .spin-value-container {
@@ -196,6 +184,7 @@ hr.game-outline {
   flex-direction: row;
   justify-content: center;
   padding: 5px 0px 5px 0px;
+  margin-top: 15px;
 }
 
 .value-display, .player-turn-display {
@@ -203,17 +192,15 @@ hr.game-outline {
   height: 40px;
   border: orange 5px double;
   background-color: #E3F1F3;
-  font-weight: bold;
   margin-left: 5px;
   text-align: center;
   font-size: 16px;
   padding: 5px;
   display: flex;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  border-radius: 5px;
 }
-
-
 
 .letter-bank-container {
   align-items: center;
@@ -222,13 +209,14 @@ hr.game-outline {
   justify-content: 
   space-around;
   padding-bottom: 10px;
+  margin-top: 14px;
 }
 
 .letter-bank {
   border-top: orange 5px double;
   border-bottom: orange 5px double;
   height: 45px;
-  width: 965px;
+  width: 923px;
   display: flex;
   justify-content: center;
 }
@@ -257,6 +245,7 @@ hr.game-outline {
   flex-direction: row;
   justify-content: center;
   padding: 0px;
+  margin-top: 9px;
 }
 
 .button {
@@ -277,7 +266,6 @@ hr.game-outline {
   cursor: pointer;
 }
 
-
 .solve-button-form {
   position: absolute;
   font-size: 24px;
@@ -290,6 +278,7 @@ hr.game-outline {
   align-items: center;
   justify-content: space-between;
   box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 5px;
 }
 
 .solve-input {
@@ -356,8 +345,8 @@ hr.game-outline {
   background-color: #C0C0C0;
 }
 
-/*.highlight-avatar {
+.highlight-avatar {
   background-color: white;
   border-color: #9ecaed;
-  box-shadow: 1px 1px 20px #01A869;;
-}*/
+  box-shadow: 1px 1px 40px #01A869;;
+}

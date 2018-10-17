@@ -21,14 +21,14 @@ class Puzzle {
     this.numberOfWords = puzzleBankIndex + 1;
     console.log(this);
     domUpdates.displayPlayerTurn();
-
+    domUpdates.highlightAvatarTurn();
   }
 
   checkGuess(event) {
     event.preventDefault();
     let playerGuess = $('.solve-input').val().toLowerCase();
     if (playerGuess === puzzle.answer) {
-      $('.player-turn-display').text(`You solved it!!`);
+      $('.player-turn-display').text(`You Solved it!!`);
       
       for (var i = 0; i < puzzle.answer.length; i++) {
         var tiles = $('.game-board-box');
@@ -46,11 +46,12 @@ class Puzzle {
       
     } else {
       //go to next player
-      $('.player-turn-display').text('That is incorrect!');
+      $('.player-turn-display').text('That is Incorrect!');
       setTimeout(() => {
         //display it is next players turn
         round.changePlayer();
         round.displayCurrentPlayerTurn();
+        round.highlightCurrentAvatarTurn();
       }, 2000);
     }
     $('.solve-button-form').addClass('hidden');
