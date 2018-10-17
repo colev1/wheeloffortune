@@ -30,18 +30,25 @@ function createNewGame() {
 
 function spinWheel() {
   domUpdates.disableVowels();
+  domUpdates.disablePlayerButtons();
   let newWheelValue = wheel.spinNewWheel();
   wheel.displayWheelValue();
   if (newWheelValue === 'BANKRUPT') {
     round.currentPlayer.scoreBankrupt();
-    round.changePlayer();
-    round.highlightCurrentPlayerTurn(); 
-    round.displayCurrentPlayerTurn();
+    setTimeout(() => { 
+      round.changePlayer();
+      round.highlightCurrentPlayerTurn(); 
+      round.displayCurrentPlayerTurn();
+      domUpdates.enablePlayerButtons();
+    }, 1600);
   }
   if (newWheelValue === 'LOSE A TURN') {
-    round.changePlayer();
-    round.highlightCurrentPlayerTurn(); 
-    round.displayCurrentPlayerTurn();
+    setTimeout(() => {
+      round.changePlayer();
+      round.highlightCurrentPlayerTurn(); 
+      round.displayCurrentPlayerTurn();
+      domUpdates.enablePlayerButtons();
+    }, 1600);
   }
 }
 

@@ -16,7 +16,11 @@ class Round {
     } else {
       this.previousPlayer = this.currentPlayer;
       this.currentPlayer = this.players[this.counter]
-    }
+    };
+    domUpdates.enablePlayerButtons();
+    domUpdates.clearSpinValueDisplay();
+    domUpdates.clearGuessInput();
+
   }
 
   displayCurrentPlayerTurn() {

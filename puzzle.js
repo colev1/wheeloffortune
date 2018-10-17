@@ -30,7 +30,6 @@ class Puzzle {
     if (playerGuess === puzzle.answer) {
       $('.player-turn-display').text(`You Solved it!!`);
       round.currentPlayer.cumulateTotalScore(round.currentPlayer.roundScore);
-      
       for (var i = 0; i < puzzle.answer.length; i++) {
         var tiles = $('.game-board-box');
         var letter = puzzle.answer.charAt(i);

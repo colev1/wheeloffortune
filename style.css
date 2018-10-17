@@ -337,13 +337,13 @@ hr {
 }
 
 .letters:enabled {
-  background-color: white;
+  /*background-color: white;*/
   border-color: #9ecaed;
-  box-shadow: 1px 1px 20px #01A869;;
+  box-shadow: 1px 1px 20px #01A869;
 }
 
 .letters:disabled {
-  background-color: #C0C0C0;
+  /*background-color: #C0C0C0;*/
 }
 
 .highlight-avatar {
