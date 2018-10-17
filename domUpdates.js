@@ -1,4 +1,4 @@
-i
+
 const domUpdates = {
 
   hideWelcomeMessage(event) {
@@ -111,7 +111,15 @@ const domUpdates = {
       player.roundScore = 0;
       $(`.round-money-${player.name}`).text('$ ' + player.roundScore);
     })
-}
+  },
+
+  clearSpinValueDisplay() {
+    $('.value-display').text('');
+  },
+
+  clearGuessInput() {
+    $('.solve-input').val('');
+  }
 }
 
 if (typeof module !== 'undefined') {
