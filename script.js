@@ -52,17 +52,6 @@ function spinWheel() {
   }
 }
 
-function createNewRound() {
-  round = new Round()
-  wheel = new Wheel();
-  player1 = new Player();
-  player2 = new Player();
-  player3 = new Player();
-  wheel.generateWheelValues();
-  puzzleBankIndex = Math.floor(Math.random() * 4);
-  selectPuzzleBank(puzzleBankIndex);
-
-}
  
 
 
