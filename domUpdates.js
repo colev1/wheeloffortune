@@ -100,10 +100,18 @@ const domUpdates = {
     $('.letters').removeClass('chosen-letter');
   },
 
+
   disableConsonants() {
     let consonants = $('.consonant');
     consonants.prop('disabled', true);
   },
+
+  resetRoundScores() {
+    round.players.map((player) => {
+      player.roundScore = 0;
+      $(`.round-money-${player.name}`).text('$ ' + player.roundScore);
+    })
+}
 }
 
 if (typeof module !== 'undefined') {
