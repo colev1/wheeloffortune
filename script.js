@@ -14,6 +14,7 @@ var player2;
 var player3;
 var currentPlayer;
 var game;
+var bonusRound;
 
 function createNewGame() {
   player1 = new Player(1);

@@ -50,7 +50,8 @@ class Puzzle {
           });
           
           // let winner = playersArr[]
-          bonusRound.newRound(winner);
+          bonusRound = new BonusRound(winningPlayer);
+          bonusRound.newRound();
           wheel.generateBonusWheel();
         } else {
           round.newRound();
