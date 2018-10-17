@@ -26,7 +26,25 @@ class Round {
   highlightCurrentPlayerTurn() {
     $(`.avatar${this.previousPlayer.name}`).removeClass('highlight-avatar');
     $(`.avatar${this.currentPlayer.name}`).addClass('highlight-avatar');
+  };
 
+  resetAvatar() {
+    $(`.avatar`).removeClass('highlight-avatar');
+  }
+
+  newRound() {
+    domUpdates.resetPuzzleBoard();
+    domUpdates.resetLetters();
+    puzzle.selectPuzzleBank(puzzleBankIndex);
+    this.currentPlayer = player1;
+    this.resetAvatar();
+    domUpdates.displayPlayerTurn();
+    domUpdates.highlightAvatarTurn();
+    this.currentRound++;
+    $('.value-display').text('');
+  };
+
+  createBonusRound() {
   }
 }
 

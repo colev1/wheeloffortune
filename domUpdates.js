@@ -19,18 +19,18 @@ const domUpdates = {
         $(tiles[i]).addClass('correct-letter');
         $(tiles[i]).text(letter.toUpperCase());
       }
-    }
-
+    };
       if ($(event.target).hasClass('vowel')) {
         round.currentPlayer.roundScore -= 100;
         round.currentPlayer.displayRoundScore();
       } else {
       round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
-
     };
     round.changePlayer();
     round.highlightCurrentPlayerTurn(); 
     round.displayCurrentPlayerTurn();
+    domUpdates.disableVowels();
+    domUpdates.disableConsonants();
   },
 
 
@@ -81,34 +81,29 @@ const domUpdates = {
     $('.avatar1').addClass('highlight-avatar');
   },
 
-  highlightVowels() {
-
+  disableVowels() {
     let vowels = $('.vowel');
-    vowels.each(function()  {
-      $(this).addClass('highlight-vowels');
-    });
-
-    let consonants = $('.letters').not('.vowel');
-    consonants.each(function()  {
-      $(this).addClass('inactive');
-    });
+    vowels.prop('disabled', true);
+    let consonants = $('.consonant');
+    consonants.prop('disabled', false);
   },
 
-  unhighlightVowels() {
+  enableVowels() {
     let vowels = $('.vowel');
-    vowels.each(function()  {
-      $(this).removeClass('highlight-vowels');
-    });
-
-    let consonants = $('.letters').not('.vowel');
-    consonants.each(function()  {
-      $(this).removeClass('inactive');
-    });
+    vowels.prop('disabled', false);
+    let consonants = $('.consonant');
+    consonants.prop('disabled', true);
   },
 
   resetLetters() {
     //change the styling of each letter back to the original once the puzzle is reloaded
     $('.letters').removeClass('chosen-letter');
+  },
+
+
+  disableConsonants() {
+    let consonants = $('.consonant');
+    consonants.prop('disabled', true);
   },
 
   resetRoundScores() {

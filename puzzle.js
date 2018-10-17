@@ -38,12 +38,7 @@ class Puzzle {
         $(tiles[i]).text(letter.toUpperCase());  
       }
       setTimeout(() => {
-        // createNewRound();
-        domUpdates.resetRoundScores();
-        domUpdates.resetPuzzleBoard();
-        domUpdates.resetLetters();
-        puzzle.generateNewPuzzle(puzzleBankIndex);
-        puzzle.selectPuzzleBank(puzzleBankIndex);
+        round.newRound();
       }, 3000);
       
     } else {
