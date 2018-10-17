@@ -1,6 +1,8 @@
 class Puzzle {
   constructor(puzzleBankIndex, category, answer) {
     this.category = category || '';
+    this.answer = '';
+    this.letters = 0;
   }
 
   selectPuzzleBank(puzzleBankIndex) {
@@ -20,8 +22,10 @@ class Puzzle {
     this.answer = answer;
     this.numberOfWords = puzzleBankIndex + 1;
     console.log(this);
+    if (round.currentRound !== 4) {
     domUpdates.displayPlayerTurn();
     domUpdates.highlightAvatarTurn();
+    }
   }
 
   checkGuess(event) {
@@ -39,6 +43,7 @@ class Puzzle {
       setTimeout(() => {
         if (round.currentRound === 4) {
           debugger;
+          round.createBonusRound();
           let playersObj = [
           {name: 'player1', score: player1.totalScore},
           {name: 'player2', score: player2.totalScore}, 
@@ -53,6 +58,7 @@ class Puzzle {
           bonusRound = new BonusRound(winningPlayer);
           bonusRound.newRound();
           wheel.generateBonusWheel();
+          
         } else {
           round.newRound();
         }
@@ -75,7 +81,7 @@ class Puzzle {
 
 class bonusPuzzle extends Puzzle {
 
-}
+  }
 
 if (typeof module !== 'undefined') {
   module.exports = Puzzle;

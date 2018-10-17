@@ -30,30 +30,39 @@ function createNewGame() {
 }
 
 function spinWheel() {
-  domUpdates.disableVowels();
-  domUpdates.disablePlayerButtons();
-  let newWheelValue = wheel.spinNewWheel();
-  wheel.displayWheelValue();
-  if (newWheelValue === 'BANKRUPT') {
-    round.currentPlayer.scoreBankrupt();
+  if (round.currentRound !== 5) {
     domUpdates.disableVowels();
-    domUpdates.disableConsonants();
-    setTimeout(() => { 
-      round.changePlayer();
-      round.highlightCurrentPlayerTurn(); 
-      round.displayCurrentPlayerTurn();
-      domUpdates.enablePlayerButtons();
-    }, 1600);
-  }
-  if (newWheelValue === 'LOSE A TURN') {
-    domUpdates.disableVowels();
-    domUpdates.disableConsonants();
-    setTimeout(() => {
-      round.changePlayer();
-      round.highlightCurrentPlayerTurn(); 
-      round.displayCurrentPlayerTurn();
-      domUpdates.enablePlayerButtons();
-    }, 1600);
+    domUpdates.disablePlayerButtons();
+    let newWheelValue = wheel.spinNewWheel();
+    wheel.displayWheelValue();
+    if (newWheelValue === 'BANKRUPT') {
+      round.currentPlayer.scoreBankrupt();
+      domUpdates.disableVowels();
+      domUpdates.disableConsonants();
+      setTimeout(() => { 
+        round.changePlayer();
+        round.highlightCurrentPlayerTurn(); 
+        round.displayCurrentPlayerTurn();
+        domUpdates.enablePlayerButtons();
+      }, 1600);
+    }
+    if (newWheelValue === 'LOSE A TURN') {
+      domUpdates.disableVowels();
+      domUpdates.disableConsonants();
+      setTimeout(() => {
+        round.changePlayer();
+        round.highlightCurrentPlayerTurn(); 
+        round.displayCurrentPlayerTurn();
+        domUpdates.enablePlayerButtons();
+      }, 1600);
+    }
+    //bonus round 
+  } else {
+    let newWheelValue = wheel.spinNewWheel();
+    wheel.displayWheelValue();
+    $('.vowel-button').prop('disabled', true);
+    $('.spin-button').prop('disabled', true);
+    domUpdates.enableBothVowelsConsonants();
   }
 }
 
