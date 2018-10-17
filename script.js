@@ -2,7 +2,7 @@ $('.start-game-button').on('click', domUpdates.hideWelcomeMessage);
 $('.start-game-button').on('click', createNewGame);
 $('.spin-button').on('click', spinWheel);
 $('.solve-button').on('click', domUpdates.displaySolveInput);
-$('.vowel-button').on('click', domUpdates.highlightVowels);
+$('.vowel-button').on('click', domUpdates.enableVowels);
 $('.vowel').on('click', domUpdates.unhighlightVowels);
 $('.letters').on('click', domUpdates.checkLetter);
 $('.solve-input').on('keyup', domUpdates.enableSolveButton);
@@ -29,6 +29,7 @@ function createNewGame() {
 }
 
 function spinWheel() {
+  domUpdates.disableVowels();
   let newWheelValue = wheel.spinNewWheel();
   wheel.displayWheelValue();
   if (newWheelValue === 'BANKRUPT') {
