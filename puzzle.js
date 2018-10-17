@@ -51,7 +51,7 @@ class Puzzle {
         //display it is next players turn
         round.changePlayer();
         round.displayCurrentPlayerTurn();
-        round.highlightCurrentAvatarTurn();
+        round.highlightCurrentPlayerTurn();
       }, 2000);
     }
     $('.solve-button-form').addClass('hidden');
