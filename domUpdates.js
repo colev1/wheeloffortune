@@ -26,11 +26,14 @@ const domUpdates = {
         round.currentPlayer.displayRoundScore();
       } else {
     };
+
+    if (round.currentRound !== 5) {
     round.changePlayer();
     round.highlightCurrentPlayerTurn(); 
     round.displayCurrentPlayerTurn();
     domUpdates.disableVowels();
     domUpdates.disableConsonants();
+    }
   },
 
 
@@ -95,6 +98,13 @@ const domUpdates = {
     consonants.prop('disabled', true);
   },
 
+  enableBothVowelsConsonants() {
+    let consonants = $('.consonant');
+    consonants.prop('disabled', false);
+    let vowels = $('.vowel');
+    vowels.prop('disabled', false);
+  },
+
   resetLetters() {
     //change the styling of each letter back to the original once the puzzle is reloaded
     $('.letters').removeClass('chosen-letter');
@@ -119,6 +129,12 @@ const domUpdates = {
 
   clearGuessInput() {
     $('.solve-input').val('');
+  },
+
+  displayBonusRoundInstructions() {
+    //display instructions 
+    $('.player-turn-display').text('Pick 1 vowel and 3 consonants then solve the puzzle!');
+    //Pick 1 vowel and 3 consonants then solve the puzzle!
   }
 }
 
