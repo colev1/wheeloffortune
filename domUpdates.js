@@ -109,9 +109,14 @@ const domUpdates = {
   resetLetters() {
     //change the styling of each letter back to the original once the puzzle is reloaded
     $('.letters').removeClass('chosen-letter');
+  },
 
-  }
-
+  resetRoundScores() {
+    round.players.map((player) => {
+      player.roundScore = 0;
+      $(`.round-money-${player.name}`).text('$ ' + player.roundScore);
+    })
+}
 }
 
 if (typeof module !== 'undefined') {
