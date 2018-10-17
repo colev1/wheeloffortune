@@ -20,7 +20,6 @@ const domUpdates = {
         $(tiles[i]).text(letter.toUpperCase());
       }
     }
-
       if ($(event.target).hasClass('vowel')) {
         round.currentPlayer.roundScore -= 100;
         round.currentPlayer.displayRoundScore();
