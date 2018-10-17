@@ -11,7 +11,8 @@ class Player {
 	}
 
 	cumulateTotalScore(roundScore) {
-    this.totalScore += player.roundScore;
+    this.totalScore += roundScore;
+    this.displayTotalScore();
   }
 
   scoreBankrupt() {
@@ -23,6 +24,10 @@ class Player {
     $(`.round-money-${round.currentPlayer.name}`).text('$ ' + this.roundScore);
   }
 
+  displayTotalScore() {
+    $(`.total-score-${round.currentPlayer.name}`).text('Total Score $ ' + this.totalScore);
+  }
+   
 }
 
  if (typeof module !== 'undefined') {

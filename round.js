@@ -26,9 +26,8 @@ class Round {
   highlightCurrentPlayerTurn() {
     $(`.avatar${this.previousPlayer.name}`).removeClass('highlight-avatar');
     $(`.avatar${this.currentPlayer.name}`).addClass('highlight-avatar');
-    // debugger;
-  }
 
+  }
 }
 
 
