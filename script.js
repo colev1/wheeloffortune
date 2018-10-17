@@ -1,5 +1,3 @@
-// 
-// const game = new Game;
 $('.start-game-button').on('click', domUpdates.hideWelcomeMessage);
 $('.start-game-button').on('click', createNewGame);
 $('.spin-button').on('click', spinWheel);
@@ -36,24 +34,15 @@ function spinWheel() {
   if (newWheelValue === 'BANKRUPT') {
     round.currentPlayer.scoreBankrupt();
     round.changePlayer();
+    round.highlightCurrentPlayerTurn(); 
+    round.displayCurrentPlayerTurn();
   }
   if (newWheelValue === 'LOSE A TURN') {
     round.changePlayer();
-    // player.nextPlayer(); - Need to determine
-    //how we move through the players and where that lives
-    //Recommend either Game or round class
+    round.highlightCurrentPlayerTurn(); 
+    round.displayCurrentPlayerTurn();
   }
 }
-
-  // function displayRoundScore() {
-  //   // know in this function, which player scored
-  //   // player-1, player-2, player-3
-
-  //   // article player-${this.name} interpolate
-
-  //   // this.name = 1|2|3
-  //   $('.round-money').text('$ ' + currentPlayer.roundScore());
-  // }
 
 function createNewRound() {
   round = new Round()
@@ -67,13 +56,7 @@ function createNewRound() {
 
 }
  
- 
-//add event listeners to the player buttons, invoke their methods when clicked
-//function selectedConsonantTurn('letter') {}
 
-
-//if wheelvalue does not equal bankrupt or skip turn, then player can guess a letter
-//player guesses letter --> check if letter is in puzzle (puzzle.checkLetter('letter'))
 
 $('.submit-guess-button').on('click', checkGuess);
 
@@ -85,5 +68,3 @@ function checkGuess(event) {
 
 
 
-// game.startGame() 
-//add puzzleAnswer to puzzle constructor
