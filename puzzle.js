@@ -51,6 +51,7 @@ class Puzzle {
           
           // let winner = playersArr[]
           bonusRound.newRound(winner);
+          wheel.generateBonusWheel();
         } else {
           round.newRound();
         }
@@ -69,7 +70,11 @@ class Puzzle {
     }
     $('.solve-button-form').addClass('hidden');
   }
-}  
+};
+
+class bonusPuzzle extends Puzzle {
+
+}
 
 if (typeof module !== 'undefined') {
   module.exports = Puzzle;

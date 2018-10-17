@@ -1,6 +1,15 @@
 class bonusRound {
-  constructor () {
-    this.player = bonusRoundPlayer;
-  }
+  constructor (winner) {
+    this.player = winner;
+  };
 
+  newRound() {
+    //display message that winner is winner
+    //spin wheel once
+    //
+  }
+}
+
+if (typeof module !== 'undefined') {
+  module.exports = bonusRound;
 }
