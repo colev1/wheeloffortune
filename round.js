@@ -50,7 +50,15 @@ class Round {
   };
 
   createBonusRound() {
-    
+    round.currentRound = 5;
+    domUpdates.resetRoundScores();
+    domUpdates.resetPuzzleBoard();
+    domUpdates.resetLetters();
+    puzzle.selectPuzzleBank(puzzleBankIndex);
+    domUpdates.displayBonusRoundInstructions();
+    // domUpdates.displayPlayerTurn();
+    // domUpdates.highlightAvatarTurn();
+    $('.value-display').text('');
   }
 }
 
