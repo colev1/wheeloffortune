@@ -28,14 +28,13 @@ const domUpdates = {
     };
 
     if (round.currentRound !== 5) {
-    round.changePlayer();
-    round.highlightCurrentPlayerTurn(); 
-    round.displayCurrentPlayerTurn();
-    domUpdates.disableVowels();
-    domUpdates.disableConsonants();
+      round.changePlayer();
+      domUpdates.highlightCurrentPlayerTurn(); 
+      domUpdates.displayCurrentPlayerTurn();
+      domUpdates.disableVowels();
+      domUpdates.disableConsonants();
     }
   },
-
 
   displaySolveInput(event) {
     event.preventDefault();
@@ -142,11 +141,33 @@ const domUpdates = {
     //display instructions 
     $('.player-turn-display').text('Pick 1 vowel and 3 consonants then solve the puzzle!');
     //Pick 1 vowel and 3 consonants then solve the puzzle!
+  },
+
+  displayRoundScore() {
+    $(`.round-money-${round.currentPlayer.name}`).text('$ ' + round.currentPlayer.roundScore);
+  },
+
+  displayTotalScore() {
+    $(`.total-score-${round.currentPlayer.name}`).text('Total Score $ ' + round.currentPlayer.totalScore);
+  },
+
+  displayCurrentPlayerTurn() {
+    $('.player-turn-display').text(`Player ${round.currentPlayer.name}.. your turn!`);
+  },
+
+  highlightCurrentPlayerTurn() {
+    $(`.avatar${round.previousPlayer.name}`).removeClass('highlight-avatar');
+    $(`.avatar${round.currentPlayer.name}`).addClass('highlight-avatar');
+  },
+
+  resetAvatar() {
+    $(`.avatar`).removeClass('highlight-avatar');
+  },
+
+  displayWheelValue() {
+    $('.value-display').text('Spin Value: ' + wheel.currentWheelElement);
   }
 
-  // quitGame() {
-  //   createNewGame();
-  // }
 }
 
 if (typeof module !== 'undefined') {

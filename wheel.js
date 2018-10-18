@@ -18,9 +18,9 @@ class Wheel {
     return this.currentWheelElement;
 	}
 
-  displayWheelValue() {
-    $('.value-display').text('Spin Value: ' + wheel.currentWheelElement);
-    }
+  // displayWheelValue() {
+  //   $('.value-display').text('Spin Value: ' + wheel.currentWheelElement);
+  //   }
  
   generateBonusWheel() {
     this.wheelElements = [
