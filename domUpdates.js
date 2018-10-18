@@ -13,6 +13,7 @@ const domUpdates = {
   checkLetter(event) {
     let letter = event.target.id;
     $(event.target).addClass('chosen-letter');
+    $(event.target).prop('disabled', true);
     var tiles = $('.game-board-box');
     for (var i = 0; i < puzzle.answer.length; i++) {
       if (puzzle.answer.charAt(i) === letter) {
@@ -75,7 +76,7 @@ const domUpdates = {
   },
 
   displayPlayerTurn() {
-    $('.player-turn-display').text('Player 1...your turn!');
+    $('.player-turn-display').text('PLAYER 1...YOUR TURN!');
   },
 
   highlightAvatarTurn() {
@@ -141,9 +142,8 @@ const domUpdates = {
       $('.1').addClass('hidden');
       $('.2').addClass('hidden');
       $('.3').addClass('hidden');
-      debugger
       $(`.${winningPlayer.name}`).removeClass('hidden');
-  }
+  },
 }
 
 if (typeof module !== 'undefined') {

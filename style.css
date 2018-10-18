@@ -358,9 +358,19 @@ hr {
 }
 
 .bonus-wheel {
-  height: 50%;
+  height: 70%;
 }
 
 .bonus-round-popup {
   padding: 40px;
 }
+
+button:disabled, .button:disabled {
+  cursor: not-allowed;
+}
+
+.button:enabled:hover {
+  background-image: url(images/wheel_share.png);
+   background-position: center; 
+}
+

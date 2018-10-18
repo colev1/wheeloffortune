@@ -24,7 +24,7 @@ class Round {
   }
 
   displayCurrentPlayerTurn() {
-    $('.player-turn-display').text(`Player ${round.currentPlayer.name}.. your turn!`);
+    $('.player-turn-display').text(`PLAYER ${round.currentPlayer.name}.. YOUR TURN!`);
   }
 
   highlightCurrentPlayerTurn() {

@@ -6,9 +6,13 @@ chai.use(spies);
 global.domUpdates = require('../domUpdates.js');
 chai.spy.on(global.domUpdates, ['hideWelcomeMessage', 'displayPuzzleCategory', 'checkLetter', 'displaySolveInput', 'displayPuzzleBoard', 'enablePlayerButtons', 'disablePlayerButtons', 'enableSolveButton'], () => true);
 
+
+
 describe ('domUpdates', function() {
   
   it ('should hide welcome message', function() {
+    // domUpdates.hideWelcomeMessage.__spy.calls = [];
+    domUpdates.hideWelcomeMessage();
     expect(domUpdates.hideWelcomeMessage()).to.have.been.called(1);
   });
 

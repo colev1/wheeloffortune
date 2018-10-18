@@ -19,7 +19,7 @@ class Wheel {
 	}
 
   displayWheelValue() {
-    $('.value-display').text('Spin Value: ' + wheel.currentWheelElement);
+    $('.value-display').text('SPIN VALUE: ' + wheel.currentWheelElement);
     }
  
   generateBonusWheel() {
