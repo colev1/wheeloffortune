@@ -20,22 +20,20 @@ const domUpdates = {
         $(tiles[i]).text(letter.toUpperCase());
         round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
       }
-    };
-      if ($(event.target).hasClass('vowel')) {
-        round.currentPlayer.roundScore -= 100;
-        round.currentPlayer.displayRoundScore();
-      } else {
-    };
+    }
+    if ($(event.target).hasClass('vowel')) {
+      round.currentPlayer.roundScore -= 100;
+      round.currentPlayer.displayRoundScore();
+    }
 
     if (round.currentRound !== 5) {
-    round.changePlayer();
-    round.highlightCurrentPlayerTurn(); 
-    round.displayCurrentPlayerTurn();
-    domUpdates.disableVowels();
-    domUpdates.disableConsonants();
+      round.changePlayer();
+      round.highlightCurrentPlayerTurn(); 
+      round.displayCurrentPlayerTurn();
+      domUpdates.disableVowels();
+      domUpdates.disableConsonants();
     }
   },
-
 
   displaySolveInput(event) {
     event.preventDefault();
@@ -55,8 +53,8 @@ const domUpdates = {
     var tiles = $('.game-board-box');
     for (var i = 0; i < puzzle.answer.length; i++) {
       // if (puzzle.answer.charAt(i) !== ' ') {
-        $(tiles[i]).removeClass('greyed');
-        $(tiles[i]).text('');
+      $(tiles[i]).removeClass('greyed');
+      $(tiles[i]).text('');
     }
   },
 
@@ -78,7 +76,7 @@ const domUpdates = {
 
   displayPlayerTurn() {
     $('.player-turn-display').text('Player 1...your turn!');
-    },
+  },
 
   highlightAvatarTurn() {
     $('.avatar1').addClass('highlight-avatar');
@@ -106,10 +104,8 @@ const domUpdates = {
   },
 
   resetLetters() {
-    //change the styling of each letter back to the original once the puzzle is reloaded
     $('.letters').removeClass('chosen-letter');
   },
-
 
   disableConsonants() {
     let consonants = $('.consonant');
@@ -131,10 +127,22 @@ const domUpdates = {
     $('.solve-input').val('');
   },
 
-  displayBonusRoundInstructions() {
-    //display instructions 
-    $('.player-turn-display').text('Pick 1 vowel and 3 consonants then solve the puzzle!');
-    //Pick 1 vowel and 3 consonants then solve the puzzle!
+  displayBonusRoundInstructions(winningPlayer) {
+    let bonusRoundPopup = $('.bonus-round-popup');
+    bonusRoundPopup.removeClass('hidden');
+    $('.bonus-round-head').text(`BONUS ROUND: PLAYER ${winningPlayer.name} SPIN THE BONUS WHEEL!!!!`)
+    setTimeout(() => {
+      bonusRoundPopup.addClass('hidden');
+      $('.player-turn-display').text('Pick 1 vowel and 3 consonants then solve the puzzle!');
+    }, 5000);
+  },
+
+  hideNonWinningPlayers(winningPlayer) {
+      $('.1').addClass('hidden');
+      $('.2').addClass('hidden');
+      $('.3').addClass('hidden');
+      debugger
+      $(`.${winningPlayer.name}`).removeClass('hidden');
   }
 }
 

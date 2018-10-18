@@ -15,31 +15,37 @@
   </section>
 
   <section class = "players-container container">
-
-    <article class="player player-1"> 
-      <div class= "avatar avatar1"> 
+    <span class = "1">
+      <article class="player player-1"> 
+        <div class= "avatar avatar1"> 
+        </div> 
+        <div class="name-bank"> 
+          <h1 class="player-name"> BEN  </h1>
+          <h1 class="round-money-1 1">  $0 </h1> 
+          <h1 class="total-score-1 1"> Total Bank: $0 </h1> 
+      </div>
+      </article>
+    </span>
+    <span class = "2">
+      <article class="player player-2 2">
+        <div class= "avatar avatar2 2"> 
+        </div> 
+        <div class="name-bank"> 
+          <h1 class="player-name"> JANE </h1>
+          <h1 class="round-money-2"> $0 </h1>
+          <h1 class="total-score-2"> Total Bank: $0 </h1> 
+        </div>
+      </article>
+    </span>
+    <span class="3">
+      <article class="player player-3 3"> 
+        <div class= "avatar avatar3 3"></div> 
+        <div class="name-bank"> 
+          <h1 class="player-name"> JAKE  </h1>
+          <h1 class="round-money-3"> $0 </h1> 
+          <h1 class="total-score-3"> Total Bank: $0</h1> 
       </div> 
-      <div class="name-bank"> 
-        <h1 class="player-name"> BEN  </h1>
-        <h1 class="round-money-1">  $0 </h1> 
-        <h1 class="total-score-1"> Total Bank: $0 </h1> 
-    </div>
-    </article>
-    <article class="player player-2">
-      <div class= "avatar avatar2"> 
-    </div> 
-      <div class="name-bank"> 
-        <h1 class="player-name"> JANE </h1>
-        <h1 class="round-money-2"> $0 </h1>
-        <h1 class="total-score-2"> Total Bank: $0 </h1> 
-    </article>
-    <article class="player player-3"> 
-      <div class= "avatar avatar3"></div> 
-      <div class="name-bank"> 
-        <h1 class="player-name"> JAKE  </h1>
-        <h1 class="round-money-3"> $0 </h1> 
-        <h1 class="total-score-3"> Total Bank: $0</h1> 
-    </div> 
+    </span>
     </article>
   </section>
 
@@ -154,6 +160,11 @@
     <input type="text" name="Input" class = "solve-input" placeholder="Enter your guess">
     <button class="submit-guess-button" type="submit" disabled="true"> SUBMIT GUESS </button> 
   </form>
+  <section class = "bonus-round-popup hidden"> 
+    <h1 class="bonus-round-head"> Congrats! 
+    </h1> 
+    <img src="images/wheel.png" class ="bonus-wheel"> 
+  </section>
 
   <script type="text/javascript" src="data-set.js"></script>
   <script type="text/javascript" src="BonusRound.js"></script>

@@ -15,6 +15,7 @@ var player3;
 var currentPlayer;
 var game;
 var bonusRound;
+var winningPlayer;
 
 function createNewGame() {
   player1 = new Player(1);
@@ -38,7 +39,6 @@ function spinWheel() {
     if (newWheelValue === 'BANKRUPT') {
       round.currentPlayer.scoreBankrupt();
       domUpdates.disableVowels();
-      domUpdates.disableConsonants();
       setTimeout(() => { 
         round.changePlayer();
         round.highlightCurrentPlayerTurn(); 
@@ -48,7 +48,6 @@ function spinWheel() {
     }
     if (newWheelValue === 'LOSE A TURN') {
       domUpdates.disableVowels();
-      domUpdates.disableConsonants();
       setTimeout(() => {
         round.changePlayer();
         round.highlightCurrentPlayerTurn(); 
@@ -74,7 +73,6 @@ $('.submit-guess-button').on('click', checkGuess);
 function checkGuess(event) {
   event.preventDefault();
   puzzle.checkGuess(event);
-  // domUpdates.checkGuess();
 }
 
 

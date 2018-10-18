@@ -11,7 +11,7 @@ body {
   background-image: url('images/disco.jpg');
 }
 
-.welcome-message {
+.welcome-message, .bonus-round-popup {
   position: absolute;
   z-index: 2;
   background-image: linear-gradient(#A8F2F9, #01A869);
@@ -350,4 +350,17 @@ hr {
   background-color: white;
   border-color: #9ecaed;
   box-shadow: 1px 1px 40px #01A869;;
+}
+
+.bonus-round-head {
+  font-size: 40px;
+  color: white;
+}
+
+.bonus-wheel {
+  height: 50%;
+}
+
+.bonus-round-popup {
+  padding: 40px;
 }

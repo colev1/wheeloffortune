@@ -23,8 +23,8 @@ class Puzzle {
     this.numberOfWords = puzzleBankIndex + 1;
     console.log(this);
     if (round.currentRound !== 4) {
-    domUpdates.displayPlayerTurn();
-    domUpdates.highlightAvatarTurn();
+      domUpdates.displayPlayerTurn();
+      domUpdates.highlightAvatarTurn();
     }
   }
 
@@ -42,24 +42,19 @@ class Puzzle {
       }
       setTimeout(() => {
         if (round.currentRound === 4) {
-          debugger;
           round.createBonusRound();
-          let playersObj = [
-          {name: 'player1', score: player1.totalScore},
-          {name: 'player2', score: player2.totalScore}, 
-          {name: 'player3', score: player3.totalScore} ];
-
+          let playersObj = [player1, player2, player3];
           let highestScore = Math.max(player1.totalScore, player2.totalScore, player3.totalScore);
-          let winningPlayer = playersObj.find((currentPlayer) => {
-            return currentPlayer.score === highestScore;
+          var winningPlayer = playersObj.find((player) => {
+            return player.totalScore === highestScore;
           });
-          
-          // let winner = playersArr[]
-          bonusRound = new BonusRound(winningPlayer);
+          domUpdates.hideNonWinningPlayers(winningPlayer);
+          bonusRound = new BonusRound();
           bonusRound.newRound();
           wheel.generateBonusWheel();
-          
-        } else {
+          domUpdates.displayBonusRoundInstructions(winningPlayer);
+        }
+          else {
           round.newRound();
         }
         
@@ -76,12 +71,13 @@ class Puzzle {
       }, 2000);
     }
     $('.solve-button-form').addClass('hidden');
+    domUpdates.clearGuessInput();
   }
-};
+}
 
 class bonusPuzzle extends Puzzle {
 
-  }
+}
 
 if (typeof module !== 'undefined') {
   module.exports = Puzzle;

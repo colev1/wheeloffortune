@@ -1,7 +1,7 @@
 class BonusRound {
-  constructor (winner) {
-    this.player = winner.name;
-    this.playerGrandTotal = winner.totalScore;
+  constructor () {
+    this.player = winningPlayer;
+    // this.playerGrandTotal = winningPlayer.totalScore;
     this.wheelValue = 0;
   };
 
@@ -11,7 +11,7 @@ class BonusRound {
     this.wheelValue = wheel.spinNewWheel();
   };
 
-  
+
 }
 
 if (typeof module !== 'undefined') {

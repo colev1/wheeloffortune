@@ -55,7 +55,7 @@ class Round {
     domUpdates.resetPuzzleBoard();
     domUpdates.resetLetters();
     puzzle.selectPuzzleBank(puzzleBankIndex);
-    domUpdates.displayBonusRoundInstructions();
+    // domUpdates.displayBonusRoundInstructions();
     // domUpdates.displayPlayerTurn();
     // domUpdates.highlightAvatarTurn();
     $('.value-display').text('');
