@@ -33,4 +33,4 @@ describe ('Round', function() {
 
   it('should have a default of player1 at the beginning of each round')
   expect(round.currentPlayer).to.equal(player1);
-  });
+});

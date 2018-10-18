@@ -6,8 +6,6 @@ chai.use(spies);
 global.domUpdates = require('../domUpdates.js');
 chai.spy.on(global.domUpdates, ['hideWelcomeMessage', 'displayPuzzleCategory', 'checkLetter', 'displaySolveInput', 'displayPuzzleBoard', 'enablePlayerButtons', 'disablePlayerButtons', 'enableSolveButton'], () => true);
 
-
-
 describe ('domUpdates', function() {
   
   it ('should hide welcome message', function() {

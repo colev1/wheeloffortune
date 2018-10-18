@@ -12,10 +12,13 @@ class Puzzle {
   }
 
   generateNewPuzzle(puzzleBankIndex) {
-    let puzzleBankArray = [ 'one_word_answers', 'two_word_answers', 'three_word_answers', 'four_word_answers'];
+    let puzzleBankArray = ['one_word_answers',
+     'two_word_answers', 
+     'three_word_answers', 
+     'four_word_answers'];
     var puzzleBankofGame = puzzleBankArray[puzzleBankIndex];
     var chosenBankArray = data.puzzles[puzzleBankofGame].puzzle_bank;
-    var selectedPuzzle = chosenBankArray[Math.floor(Math.random() * chosenBankArray.length)];
+    var selectedPuzzle = chosenBankArray[Math.floor(Math.random()*chosenBankArray.length)];
     this.category = selectedPuzzle.category;
     this.letters = selectedPuzzle.total_number_of_letters;
     var answer = selectedPuzzle.correct_answer.toLowerCase().replace(/-/g, " ").replace(/&/g, "and");
@@ -53,25 +56,26 @@ class Puzzle {
           bonusRound.newRound();
           wheel.generateBonusWheel();
           domUpdates.displayBonusRoundInstructions(winningPlayer);
-        }
-        else if (round.currentRound === 5) {
+        } else if (round.currentRound === 5) {
           domUpdates.displayGameWinner();
-        }
-          else {
+        } else {
           round.newRound();
         }
         
       }, 3000);
       
     } else {
-      //go to next player
-      $('.player-turn-display').text('That is Incorrect!');
-      setTimeout(() => {
-        //display it is next players turn
-        round.changePlayer();
-        round.displayCurrentPlayerTurn();
-        round.highlightCurrentPlayerTurn();
-      }, 2000);
+      if (round.currentRound === 5) {
+        domUpdates.displayGameLoser();
+      }
+      else {
+        $('.player-turn-display').text('That is Incorrect!');
+        setTimeout(() => {
+          round.changePlayer();
+          round.displayCurrentPlayerTurn();
+          round.highlightCurrentPlayerTurn();
+        }, 2000);
+      }
     }
     $('.solve-button-form').addClass('hidden');
     domUpdates.clearGuessInput();

@@ -159,6 +159,14 @@ const domUpdates = {
     $('.bonus-round-head').text(`CONGRATS PLAYER ${winningPlayer.name}, YOU WON A ${wheel.currentWheelElement}`);
       }
     }, 1000);
+  },
+
+  displayGameLoser() {
+    setTimeout(() => {
+      let bonusRoundPopup = $('.bonus-round-popup');
+      bonusRoundPopup.removeClass('hidden');
+      $('.bonus-round-head').text(`SORRY PLAYER ${winningPlayer.name}, YOU'RE WRONG! GAME OVER. YOU STILL WIN $${winningPlayer.totalScore}`);
+    }, 1000);
   }
 }
 

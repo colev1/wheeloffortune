@@ -5,10 +5,12 @@
 body {
   display: grid;
   font-family: sans-serif;
+  font-weight: bold;
   grid-template-rows: auto;
   background-size: cover;
    background-repeat: no-repeat;
   background-image: url('images/disco.jpg');
+  height: 100vh;
 }
 
 .welcome-message, .bonus-round-popup {
@@ -361,9 +363,11 @@ hr {
   padding: 40px;
 }
 
-button:disabled, .button:disabled {
-  cursor: not-allowed;
+.letters:enabled:hover {
+  background-color: #01A869;
+  color: orange;
 }
+
 
 .button:enabled:hover {
   background-image: url(images/wheel_share.png);
