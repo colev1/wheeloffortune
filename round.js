@@ -20,20 +20,6 @@ class Round {
     domUpdates.enablePlayerButtons();
     domUpdates.clearSpinValueDisplay();
     domUpdates.clearGuessInput();
-
-  }
-
-  displayCurrentPlayerTurn() {
-    $('.player-turn-display').text(`Player ${round.currentPlayer.name}.. your turn!`);
-  }
-
-  highlightCurrentPlayerTurn() {
-    $(`.avatar${this.previousPlayer.name}`).removeClass('highlight-avatar');
-    $(`.avatar${this.currentPlayer.name}`).addClass('highlight-avatar');
-  };
-
-  resetAvatar() {
-    $(`.avatar`).removeClass('highlight-avatar');
   }
 
   newRound() {
@@ -42,7 +28,7 @@ class Round {
     domUpdates.resetLetters();
     puzzle.selectPuzzleBank(puzzleBankIndex);
     this.currentPlayer = player1;
-    this.resetAvatar();
+    domUpdates.resetAvatar();
     domUpdates.displayPlayerTurn();
     domUpdates.highlightAvatarTurn();
     this.currentRound++;

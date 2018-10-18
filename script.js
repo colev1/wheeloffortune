@@ -35,15 +35,15 @@ function spinWheel() {
     domUpdates.disableVowels();
     domUpdates.disablePlayerButtons();
     let newWheelValue = wheel.spinNewWheel();
-    wheel.displayWheelValue();
+    domUpdates.displayWheelValue();
     if (newWheelValue === 'BANKRUPT') {
       round.currentPlayer.scoreBankrupt();
       domUpdates.disableVowels();
       domUpdates.disableConsonants();
       setTimeout(() => { 
         round.changePlayer();
-        round.highlightCurrentPlayerTurn(); 
-        round.displayCurrentPlayerTurn();
+        domUpdates.highlightCurrentPlayerTurn(); 
+        domUpdates.displayCurrentPlayerTurn();
         domUpdates.enablePlayerButtons();
       }, 1600);
     }
@@ -52,15 +52,15 @@ function spinWheel() {
       domUpdates.disableConsonants();
       setTimeout(() => {
         round.changePlayer();
-        round.highlightCurrentPlayerTurn(); 
-        round.displayCurrentPlayerTurn();
+        domUpdates.highlightCurrentPlayerTurn(); 
+        domUpdates.displayCurrentPlayerTurn();
         domUpdates.enablePlayerButtons();
       }, 1600);
     }
     //bonus round 
   } else {
     let newWheelValue = wheel.spinNewWheel();
-    wheel.displayWheelValue();
+    domUpdates.displayWheelValue();
     $('.vowel-button').prop('disabled', true);
     $('.spin-button').prop('disabled', true);
     domUpdates.enableBothVowelsConsonants();
@@ -68,7 +68,6 @@ function spinWheel() {
 }
 
  function quitGame() {
-  debugger;
     domUpdates.resetPuzzleBoard();
     domUpdates.resetRoundScores();
     domUpdates.resetTotalScore();

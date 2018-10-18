@@ -7,27 +7,18 @@ class Player {
 	
 	incrementRoundScore(roundScore) {
 		this.roundScore += roundScore;
-    this.displayRoundScore();
+    domUpdates.displayRoundScore();
 	}
 
 	cumulateTotalScore(roundScore) {
     this.totalScore += roundScore;
-    this.displayTotalScore();
+    domUpdates.displayTotalScore();
   }
 
   scoreBankrupt() {
   	this.roundScore = 0;
-    this.displayRoundScore();
+    domUpdates.displayRoundScore();
   }
-
-  displayRoundScore() {
-    $(`.round-money-${round.currentPlayer.name}`).text('$ ' + this.roundScore);
-  }
-
-  displayTotalScore() {
-    $(`.total-score-${round.currentPlayer.name}`).text('Total Score $ ' + this.totalScore);
-  }
-   
 }
 
  if (typeof module !== 'undefined') {
