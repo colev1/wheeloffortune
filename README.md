@@ -9,6 +9,9 @@ See It Live:
 
 ![Game in action](images/wheel.gif)
 
+![Game in action](images/wheel-2.gif)
+
+![Game in action](images/wheel-3.gif)
 
 Languages Used:
 Primary Javascript ES6
