@@ -23,7 +23,7 @@ class Player {
   }
 
   scoreBankrupt() {
-  	this.roundScore = 0;
+    this.roundScore = 0;
     domUpdates.displayRoundScore();
   }
 }

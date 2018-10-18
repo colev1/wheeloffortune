@@ -4,10 +4,7 @@
 
 body {
   background-image: url('images/disco.jpg');
-  background-image: url('images/disco.jpg');
   background-repeat: no-repeat;
-  background-repeat: no-repeat;
-  background-size: cover;
   background-size: cover;
   display: grid;
   font-family: sans-serif;
@@ -28,10 +25,8 @@ body {
   justify-content: space-around;
   left: 250px;
   position: absolute;
-  position: absolute;
   top: 120px;
   width: 65%;
-  z-index: 2;
   z-index: 2;
 }
 
@@ -56,7 +51,6 @@ body {
 
 .container {
   padding: 10px 5px 20px 10px;}
-
 
 /*Quit styling*/
 .quit-button {
@@ -228,7 +222,6 @@ hr {
   width: 800px;
 }
 
-
 /*Spin value & Player turn styling*/
 .spin-value-container {
   align-items: center;
@@ -253,7 +246,6 @@ hr {
   text-align: center;
   width: 250px;
 }
-
 
 /*Letter bank styling*/
 .letter-bank-container {
@@ -410,5 +402,3 @@ hr {
   background-image: url(images/wheel_share.png);
   background-position: center; 
 }
-
-

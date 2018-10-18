@@ -7,6 +7,7 @@ $('.vowel').on('click', domUpdates.unhighlightVowels);
 $('.letters').on('click', domUpdates.checkLetter);
 $('.solve-input').on('keyup', domUpdates.enableSolveButton);
 $('.quit-button').on('click', quitGame);
+$('.submit-guess-button').on('click', checkGuess);
 
 var wheel;
 var round;
@@ -56,7 +57,6 @@ function spinWheel() {
         domUpdates.enablePlayerButtons();
       }, 1600);
     }
-    //bonus round 
   } else {
     let newWheelValue = wheel.spinNewWheel();
     domUpdates.displayWheelValue();
@@ -72,9 +72,6 @@ function quitGame() {
   domUpdates.resetTotalScore();
   createNewGame();
 }
-
-
-$('.submit-guess-button').on('click', checkGuess);
 
 function checkGuess(event) {
   event.preventDefault();
