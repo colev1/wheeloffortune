@@ -21,11 +21,10 @@ describe ('Puzzle', function() {
 
   it('should take in a key index property and category property', function() {
     puzzle = new Puzzle(1, 'phrase', 'Phrase');
-    expect(puzzle).to.eql({puzzleBankIndex: 2, category: 'Phrase'});
+    expect(puzzle.category).to.eql('phrase');
   })
 
   it('should be able to generate a new puzzle using the puzzle bank index', function() {
-  
     puzzle.generateNewPuzzle(3);
     expect(selectedPuzzle).to.exist();
   });
@@ -40,14 +39,5 @@ describe ('Puzzle', function() {
       expect(puzzle.category).to.exist;
       expect(puzzle.letters).to.exist;
     });
-  })
-  
-
-  it('should be able to check the guess input against the answer', function() {
-    // puzzle.checkGuess('Silly willy');
   });
-
-
-
-
 })
