@@ -62,7 +62,7 @@ body {
   padding-left: -1px;
   position: absolute;
   top: 20px;
-  width: 75px;
+  width: 68px;
   z-index: 1;
 }
 
@@ -209,6 +209,7 @@ hr {
   font-size: 16px;
   height: 35px;
   margin-left: -3px;
+  margin-top: 4px;
   padding: 7px;
   position: absolute;
   text-align: center;

@@ -22,7 +22,7 @@ const domUpdates = {
       }
     };
       if ($(event.target).hasClass('vowel')) {
-        round.currentPlayer.roundScore -= 100;
+        round.currentPlayer.roundScore - 100;
         round.currentPlayer.displayRoundScore();
       } else {
     };
@@ -123,6 +123,13 @@ const domUpdates = {
     })
   },
 
+  resetTotalScore() {
+    round.players.map((player) => {
+      player.totalScore = 0;
+      $(`.total-score-${player.name}`).text('TOTAL BANK: $ ' + player.totalScore);
+    })
+  },
+
   clearSpinValueDisplay() {
     $('.value-display').text('');
   },
@@ -136,6 +143,10 @@ const domUpdates = {
     $('.player-turn-display').text('Pick 1 vowel and 3 consonants then solve the puzzle!');
     //Pick 1 vowel and 3 consonants then solve the puzzle!
   }
+
+  // quitGame() {
+  //   createNewGame();
+  // }
 }
 
 if (typeof module !== 'undefined') {

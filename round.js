@@ -56,8 +56,6 @@ class Round {
     domUpdates.resetLetters();
     puzzle.selectPuzzleBank(puzzleBankIndex);
     domUpdates.displayBonusRoundInstructions();
-    // domUpdates.displayPlayerTurn();
-    // domUpdates.highlightAvatarTurn();
     $('.value-display').text('');
   }
 }
