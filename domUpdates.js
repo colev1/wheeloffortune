@@ -13,6 +13,7 @@ const domUpdates = {
   checkLetter(event) {
     let letter = event.target.id;
     $(event.target).addClass('chosen-letter');
+    $(event.target).prop('disabled', true);
     var tiles = $('.game-board-box');
     for (var i = 0; i < puzzle.answer.length; i++) {
       if (puzzle.answer.charAt(i) === letter) {
@@ -54,8 +55,8 @@ const domUpdates = {
     var tiles = $('.game-board-box');
     for (var i = 0; i < puzzle.answer.length; i++) {
       // if (puzzle.answer.charAt(i) !== ' ') {
-        $(tiles[i]).removeClass('greyed');
-        $(tiles[i]).text('');
+      $(tiles[i]).removeClass('greyed');
+      $(tiles[i]).text('');
     }
   },
 
@@ -76,8 +77,8 @@ const domUpdates = {
   },
 
   displayPlayerTurn() {
-    $('.player-turn-display').text('Player 1...your turn!');
-    },
+    $('.player-turn-display').text('PLAYER 1...YOUR TURN!');
+  },
 
   highlightAvatarTurn() {
     $('.avatar1').addClass('highlight-avatar');
@@ -105,10 +106,8 @@ const domUpdates = {
   },
 
   resetLetters() {
-    //change the styling of each letter back to the original once the puzzle is reloaded
     $('.letters').removeClass('chosen-letter');
   },
-
 
   disableConsonants() {
     let consonants = $('.consonant');
@@ -136,11 +135,44 @@ const domUpdates = {
   clearGuessInput() {
     $('.solve-input').val('');
   },
+  
+  displayBonusRoundInstructions(winningPlayer) {
+    let bonusRoundPopup = $('.bonus-round-popup');
+    bonusRoundPopup.removeClass('hidden');
+    $('.bonus-round-head').text(`BONUS ROUND: PLAYER ${winningPlayer.name} SPIN THE BONUS WHEEL!!!!`)
+    setTimeout(() => {
+      bonusRoundPopup.addClass('hidden');
+      $('.player-turn-display').text('Pick 1 vowel and 3 consonants then solve the puzzle!');
+    }, 5000);
+  },
 
-  displayBonusRoundInstructions() {
-    //display instructions 
-    $('.player-turn-display').text('Pick 1 vowel and 3 consonants then solve the puzzle!');
-    //Pick 1 vowel and 3 consonants then solve the puzzle!
+  hideNonWinningPlayers(winningPlayer) {
+      $('.1').addClass('hidden');
+      $('.2').addClass('hidden');
+      $('.3').addClass('hidden');
+      $(`.${winningPlayer.name}`).removeClass('hidden');
+  },
+
+  displayGameWinner() {
+    setTimeout(() => {
+    let bonusRoundPopup = $('.bonus-round-popup');
+    bonusRoundPopup.removeClass('hidden');
+      if (typeof wheel.currentWheelElement === 'number') {
+        let newTotalScore = winningPlayer.totalScore + wheel.currentWheelElement;
+        $('.bonus-round-head').text(`CONGRATS PLAYER ${winningPlayer.name}, YOU WON $${newTotalScore}`);
+      }
+      else {
+    $('.bonus-round-head').text(`CONGRATS PLAYER ${winningPlayer.name}, YOU WON A ${wheel.currentWheelElement}`);
+      }
+    }, 1000);
+  },
+
+  displayGameLoser() {
+    setTimeout(() => {
+      let bonusRoundPopup = $('.bonus-round-popup');
+      bonusRoundPopup.removeClass('hidden');
+      $('.bonus-round-head').text(`SORRY PLAYER ${winningPlayer.name}, YOU'RE WRONG! GAME OVER. YOU STILL WIN $${winningPlayer.totalScore}`);
+    }, 1000);
   },
 
   displayRoundScore() {

@@ -16,33 +16,40 @@
   <nav class="game-nav">
     <button class="quit-button" type="quit"><i class="far fa-times-circle"></i> QUIT</button>
   </nav> 
-  <header class = "players-container container">
-    <section class="player player-1"> 
-      <div class= "avatar avatar1"> 
-      </div> 
-      <div class="name-bank"> 
-        <h1 class="player-name"> BEN  </h1>
-        <h1 class="round-money-1">  $0 </h1> 
-        <h1 class="total-score-1"> Total Bank: $0 </h1> 
+  <section class = "players-container container">
+    <span class = "1">
+      <article class="player player-1"> 
+        <div class= "avatar avatar1"> 
+        </div> 
+        <div class="name-bank"> 
+          <h1 class="player-name"> BEN  </h1>
+          <h1 class="round-money-1 1">  $0 </h1> 
+          <h1 class="total-score-1 1"> Total Bank: $0 </h1> 
       </div>
-    </section>
-    <section class="player player-2">
-      <div class= "avatar avatar2"> 
-    </div> 
-      <div class="name-bank"> 
-        <h1 class="player-name"> JANE </h1>
-        <h1 class="round-money-2"> $0 </h1>
-        <h1 class="total-score-2"> Total Bank: $0 </h1> 
-    </section>
-    <section class="player player-3"> 
-      <div class= "avatar avatar3"></div> 
-      <div class="name-bank"> 
-        <h1 class="player-name"> JAKE  </h1>
-        <h1 class="round-money-3"> $0 </h1> 
-        <h1 class="total-score-3"> Total Bank: $0</h1> 
-    </div> 
-    </section>
-  </header>
+      </article>
+    </span>
+    <span class = "2">
+      <article class="player player-2 2">
+        <div class= "avatar avatar2 2"> 
+        </div> 
+        <div class="name-bank"> 
+          <h1 class="player-name"> JANE </h1>
+          <h1 class="round-money-2"> $0 </h1>
+          <h1 class="total-score-2"> Total Bank: $0 </h1> 
+        </div>
+      </article>
+    </span>
+    <span class="3">
+      <article class="player player-3 3"> 
+        <div class= "avatar avatar3 3"></div> 
+        <div class="name-bank"> 
+          <h1 class="player-name"> JAKE  </h1>
+          <h1 class="round-money-3"> $0 </h1> 
+          <h1 class="total-score-3"> Total Bank: $0</h1> 
+      </div> 
+    </span>
+    </article>
+  </section>
   <section class="category-container container">
     <article class="category-display"> CATEGORY </article>
   </section>
@@ -50,15 +57,15 @@
   <section class="board-container container"> 
     <article class="game-board"> 
       <section class="game-board-row">
+        <div class="game-board-box G"> </div>
+        <div class="game-board-box A"> </div>
+        <div class="game-board-box M"> </div>
+        <div class="game-board-box E"> </div>
         <div class="game-board-box"> </div>
-        <div class="game-board-box"> </div>
-        <div class="game-board-box"> </div>
-        <div class="game-board-box"> </div>
-        <div class="game-board-box"> </div>
-        <div class="game-board-box"> </div>
-        <div class="game-board-box"> </div>
-        <div class="game-board-box"> </div>
-        <div class="game-board-box"> </div>
+        <div class="game-board-box O"> </div>
+        <div class="game-board-box V"> </div>
+        <div class="game-board-box E"> </div>
+        <div class="game-board-box R"> </div>
         <div class="game-board-box"> </div>
         <div class="game-board-box"> </div>
         <div class="game-board-box"> </div>
@@ -152,6 +159,12 @@
     <input type="text" name="Input" class = "solve-input" placeholder="Enter your guess">
     <button class="submit-guess-button" type="submit" disabled="true"> SUBMIT GUESS </button> 
   </form>
+  <section class = "bonus-round-popup hidden"> 
+    <h1 class="bonus-round-head"> Congrats! 
+    </h1> 
+    <img src="images/wheel.png" class ="bonus-wheel"> 
+  </section>
+  <script type="text/javascript" src="domUpdates.js"></script>
   <script type="text/javascript" src="data-set.js"></script>
   <script type="text/javascript" src="BonusRound.js"></script>
   <script type="text/javascript" src="Wheel.js"></script>
@@ -159,7 +172,6 @@
   <script type="text/javascript" src="Player.js"></script>
   <script type="text/javascript" src="Round.js"></script>
   <script type="text/javascript" src="Game.js"></script>
-  <script type="text/javascript" src="domUpdates.js"></script>
   <script src="./jquery/jquery-3.2.1.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </body>

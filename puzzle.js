@@ -12,10 +12,13 @@ class Puzzle {
   }
 
   generateNewPuzzle(puzzleBankIndex) {
-    let puzzleBankArray = [ 'one_word_answers', 'two_word_answers', 'three_word_answers', 'four_word_answers'];
+    let puzzleBankArray = ['one_word_answers',
+     'two_word_answers', 
+     'three_word_answers', 
+     'four_word_answers'];
     var puzzleBankofGame = puzzleBankArray[puzzleBankIndex];
     var chosenBankArray = data.puzzles[puzzleBankofGame].puzzle_bank;
-    var selectedPuzzle = chosenBankArray[Math.floor(Math.random() * chosenBankArray.length)];
+    var selectedPuzzle = chosenBankArray[Math.floor(Math.random()*chosenBankArray.length)];
     this.category = selectedPuzzle.category;
     this.letters = selectedPuzzle.total_number_of_letters;
     var answer = selectedPuzzle.correct_answer.toLowerCase().replace(/-/g, " ").replace(/&/g, "and");
@@ -23,8 +26,8 @@ class Puzzle {
     this.numberOfWords = puzzleBankIndex + 1;
     console.log(this);
     if (round.currentRound !== 4) {
-    domUpdates.displayPlayerTurn();
-    domUpdates.highlightAvatarTurn();
+      domUpdates.displayPlayerTurn();
+      domUpdates.highlightAvatarTurn();
     }
   }
 
@@ -42,46 +45,47 @@ class Puzzle {
       }
       setTimeout(() => {
         if (round.currentRound === 4) {
-          debugger;
           round.createBonusRound();
-          let playersObj = [
-          {name: 'player1', score: player1.totalScore},
-          {name: 'player2', score: player2.totalScore}, 
-          {name: 'player3', score: player3.totalScore} ];
-
+          let playersObj = [player1, player2, player3];
           let highestScore = Math.max(player1.totalScore, player2.totalScore, player3.totalScore);
-          let winningPlayer = playersObj.find((currentPlayer) => {
-            return currentPlayer.score === highestScore;
+          winningPlayer = playersObj.find((player) => {
+            return player.totalScore === highestScore;
           });
-          
-          // let winner = playersArr[]
-          bonusRound = new BonusRound(winningPlayer);
+          domUpdates.hideNonWinningPlayers(winningPlayer);
+          bonusRound = new BonusRound();
           bonusRound.newRound();
           wheel.generateBonusWheel();
-          
+          domUpdates.displayBonusRoundInstructions(winningPlayer);
+        } else if (round.currentRound === 5) {
+          domUpdates.displayGameWinner();
         } else {
           round.newRound();
         }
         
       }, 3000);
       
-    } else {
-      //go to next player
-      $('.player-turn-display').text('That is Incorrect!');
-      setTimeout(() => {
-        //display it is next players turn
-        round.changePlayer();
+      } else {
+      if (round.currentRound === 5) {
+        domUpdates.displayGameLoser();
+      }
+      else {
+        $('.player-turn-display').text('That is Incorrect!');
+        setTimeout(() => {
+          round.changePlayer();
         domUpdates.displayCurrentPlayerTurn();
         domUpdates.highlightCurrentPlayerTurn();
-      }, 2000);
+        }, 2000);
+      }
+
     }
     $('.solve-button-form').addClass('hidden');
+    domUpdates.clearGuessInput();
   }
-};
+}
 
 class bonusPuzzle extends Puzzle {
 
-  }
+}
 
 if (typeof module !== 'undefined') {
   module.exports = Puzzle;

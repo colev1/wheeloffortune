@@ -20,7 +20,7 @@ describe ('Puzzle', function() {
   })
 
   it('should take in a key index property and category property', function() {
-    puzzle = new Puzzle(2, 'Phrase');
+    puzzle = new Puzzle(1, 'phrase, 'Phrase');
     expect(puzzle).to.eql({puzzleBankIndex: 2,category: 'Phrase'});
   })
 

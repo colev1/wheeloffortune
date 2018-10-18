@@ -8,11 +8,18 @@ body {
   background-size: cover;
   display: grid;
   font-family: sans-serif;
+  font-weight: bold;
   grid-template-rows: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('images/disco.jpg');
+  height: 100vh;
 }
 
 /*Welcome pop-up styling*/
-.welcome-message {
+.welcome-message, .bonus-round-popup {
+  position: absolute;
+  z-index: 2;
   align-items: center;
   background-image: linear-gradient(#A8F2F9, #01A869);
   border: 10px solid orange;
@@ -374,6 +381,34 @@ hr {
   box-shadow: 1px 1px 20px #01A869;
 }
 
+.highlight-avatar {
+  background-color: white;
+  border-color: #9ecaed;
+  box-shadow: 1px 1px 40px #01A869;;
+}
 
+.bonus-round-head {
+  font-size: 40px;
+  color: black;
+  text-align: center;
+}
+
+.bonus-wheel {
+  height: 70%;
+}
+
+.bonus-round-popup {
+  padding: 40px;
+}
+
+.letters:enabled:hover {
+  background-color: #01A869;
+  color: orange;
+}
+
+.button:enabled:hover {
+  background-image: url(images/wheel_share.png);
+  background-position: center; 
+}
 
 

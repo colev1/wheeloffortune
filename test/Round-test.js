@@ -30,6 +30,6 @@ describe ('Round', function() {
   //   round.changePlayer();
   //   expect(round.currentPlayer).to.equal(player2);
   // });
+});
 
-})
 

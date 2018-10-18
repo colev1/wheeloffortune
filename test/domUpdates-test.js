@@ -9,6 +9,8 @@ chai.spy.on(global.domUpdates, ['hideWelcomeMessage', 'displayPuzzleCategory', '
 describe ('domUpdates', function() {
   
   it ('should hide welcome message', function() {
+    // domUpdates.hideWelcomeMessage.__spy.calls = [];
+    domUpdates.hideWelcomeMessage();
     expect(domUpdates.hideWelcomeMessage()).to.have.been.called(1);
   });
 
