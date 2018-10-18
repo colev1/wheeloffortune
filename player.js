@@ -6,8 +6,10 @@ class Player {
 	}
 	
 	incrementRoundScore(roundScore) {
-		this.roundScore += roundScore;
+		if (round.currentRound !== 5) {
+    this.roundScore += roundScore;
     this.displayRoundScore();
+    }
 	}
 
 	cumulateTotalScore(roundScore) {

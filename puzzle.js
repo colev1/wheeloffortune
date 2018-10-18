@@ -45,7 +45,7 @@ class Puzzle {
           round.createBonusRound();
           let playersObj = [player1, player2, player3];
           let highestScore = Math.max(player1.totalScore, player2.totalScore, player3.totalScore);
-          var winningPlayer = playersObj.find((player) => {
+          winningPlayer = playersObj.find((player) => {
             return player.totalScore === highestScore;
           });
           domUpdates.hideNonWinningPlayers(winningPlayer);
@@ -53,6 +53,9 @@ class Puzzle {
           bonusRound.newRound();
           wheel.generateBonusWheel();
           domUpdates.displayBonusRoundInstructions(winningPlayer);
+        }
+        else if (round.currentRound === 5) {
+          domUpdates.displayGameWinner();
         }
           else {
           round.newRound();

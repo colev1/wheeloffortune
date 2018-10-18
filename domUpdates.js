@@ -23,8 +23,10 @@ const domUpdates = {
       }
     }
     if ($(event.target).hasClass('vowel')) {
-      round.currentPlayer.roundScore -= 100;
-      round.currentPlayer.displayRoundScore();
+      if (round.currentRound !== 5 ){
+        round.currentPlayer.roundScore -= 100;
+        round.currentPlayer.displayRoundScore();
+      }
     }
 
     if (round.currentRound !== 5) {
@@ -144,6 +146,20 @@ const domUpdates = {
       $('.3').addClass('hidden');
       $(`.${winningPlayer.name}`).removeClass('hidden');
   },
+
+  displayGameWinner() {
+    setTimeout(() => {
+    let bonusRoundPopup = $('.bonus-round-popup');
+    bonusRoundPopup.removeClass('hidden');
+      if (typeof wheel.currentWheelElement === 'number') {
+        let newTotalScore = winningPlayer.totalScore + wheel.currentWheelElement;
+        $('.bonus-round-head').text(`CONGRATS PLAYER ${winningPlayer.name}, YOU WON $${newTotalScore}`);
+      }
+      else {
+    $('.bonus-round-head').text(`CONGRATS PLAYER ${winningPlayer.name}, YOU WON A ${wheel.currentWheelElement}`);
+      }
+    }, 1000);
+  }
 }
 
 if (typeof module !== 'undefined') {
