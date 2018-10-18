@@ -18,15 +18,15 @@ const domUpdates = {
       if (puzzle.answer.charAt(i) === letter) {
         $(tiles[i]).addClass('correct-letter');
         $(tiles[i]).text(letter.toUpperCase());
-        round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
+        if ($(event.target).hasClass('consonant')) { 
+          round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
+       }
       }
     };
-      if ($(event.target).hasClass('vowel')) {
-        round.currentPlayer.roundScore - 100;
-        round.currentPlayer.displayRoundScore();
+      if ($(event.target).hasClass('vowel')) {  
+        round.currentPlayer.decreaseRoundScore();
       } else {
     };
-
     if (round.currentRound !== 5) {
       round.changePlayer();
       domUpdates.highlightCurrentPlayerTurn(); 

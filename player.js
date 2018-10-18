@@ -10,6 +10,11 @@ class Player {
     domUpdates.displayRoundScore();
 	}
 
+  decreaseRoundScore() {
+    this.roundScore -= 100;
+    domUpdates.displayRoundScore();
+  }
+
 	cumulateTotalScore(roundScore) {
     this.totalScore += roundScore;
     domUpdates.displayTotalScore();

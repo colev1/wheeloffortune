@@ -71,8 +71,8 @@ class Puzzle {
       setTimeout(() => {
         //display it is next players turn
         round.changePlayer();
-        round.displayCurrentPlayerTurn();
-        round.highlightCurrentPlayerTurn();
+        domUpdates.displayCurrentPlayerTurn();
+        domUpdates.highlightCurrentPlayerTurn();
       }, 2000);
     }
     $('.solve-button-form').addClass('hidden');

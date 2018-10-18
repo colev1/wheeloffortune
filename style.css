@@ -11,6 +11,7 @@ body {
   grid-template-rows: auto;
 }
 
+/*Welcome pop-up styling*/
 .welcome-message {
   align-items: center;
   background-image: linear-gradient(#A8F2F9, #01A869);
@@ -50,6 +51,7 @@ body {
   padding: 10px 5px 20px 10px;}
 
 
+/*Quit styling*/
 .quit-button {
   background-color: transparent;
   border-radius: 5px;
@@ -72,7 +74,6 @@ body {
 }
 
 .quit-button:hover {
-  /*color: orange;*/
   box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.75);
 }
 
@@ -81,6 +82,7 @@ body {
   width: 20px;
 }
 
+/*Player & avatar styling*/
 .players-container {
   align-items: center;
   display: flex;
@@ -156,6 +158,34 @@ body {
   font-size: 16px;
 }
 
+/*Category display styling*/
+.category-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 14px;
+  padding: 15px 0px 0px 0px;
+}
+
+.category-display {
+  background-color: #E3F1F3;
+  border-radius: 5px;
+  border: orange 3px solid;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  height: 35px;
+  margin-left: -3px;
+  margin-top: 4px;
+  padding: 7px;
+  position: absolute;
+  text-align: center;
+  width: 250px;
+  z-index: 1;
+}
+
+/*Game-board styling*/
 .board-container {
   align-items: center;
   display: flex;
@@ -191,32 +221,8 @@ hr {
   width: 800px;
 }
 
-.category-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 14px;
-  padding: 15px 0px 0px 0px;
-}
 
-.category-display {
-  background-color: #E3F1F3;
-  border-radius: 5px;
-  border: orange 3px solid;
-  display: flex;
-  flex-direction: column;
-  font-size: 16px;
-  height: 35px;
-  margin-left: -3px;
-  margin-top: 4px;
-  padding: 7px;
-  position: absolute;
-  text-align: center;
-  width: 250px;
-  z-index: 1;
-}
-
+/*Spin value & Player turn styling*/
 .spin-value-container {
   align-items: center;
   display: flex;
@@ -233,7 +239,7 @@ hr {
   border: orange 5px double;
   display: flex;
   font-size: 16px;
-  height: 40px;
+  height: 53px;
   justify-content: center;
   margin-left: 5px;
   padding: 5px;
@@ -241,6 +247,8 @@ hr {
   width: 250px;
 }
 
+
+/*Letter bank styling*/
 .letter-bank-container {
   align-items: center;
   display: flex;
@@ -278,6 +286,7 @@ hr {
   background-color: orange;
 }
 
+/*Action buttons styling*/
 .action-buttons-container {
   align-items: center;
   display: flex;
@@ -305,7 +314,7 @@ hr {
   cursor: pointer;
 }
 
-
+/*Check guess styling*/
 .solve-button-form {
   align-items: center;
   border-radius: 5px;
