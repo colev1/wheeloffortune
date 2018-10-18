@@ -8,6 +8,7 @@ Run `npm install` in your terminal
 
 ### Test Driven Development
 Wheel of !Fortune uses Mocha and Chai for testing
+
 Run with `npm test` from the associated root directory
 
 ### Background / About
