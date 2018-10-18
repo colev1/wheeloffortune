@@ -1,6 +1,6 @@
 
 # Wheel of !Fortune - Turing Mod 2 FE Project
-A site for users to play Wheel of Fortune with their friends; Solve puzzles, and win money in hopes to make it to the Bonus Round where they ahve the chance to win the ultimate grand prize.
+A site for users to play Wheel of Fortune with their friends; Solve puzzles, and win money in hopes to make it to the Bonus Round where they have a chance to win the ultimate grand prize.
 
 ### Set Up - Front-end
 Clone this repo
