@@ -1,6 +1,6 @@
 class Round {
-	constructor(player1, player2, player3, currentRound) {
-		this.currentRound = currentRound || 1;	
+  constructor(player1, player2, player3, currentRound) {
+    this.currentRound = currentRound || 1;	
     this.players = [player1, player2, player3];
     this.currentPlayer = player1;
     this.counter = 0;
@@ -16,7 +16,7 @@ class Round {
     } else {
       this.previousPlayer = this.currentPlayer;
       this.currentPlayer = this.players[this.counter]
-    };
+    }
     domUpdates.enablePlayerButtons();
     domUpdates.clearSpinValueDisplay();
     domUpdates.clearGuessInput();
@@ -33,7 +33,7 @@ class Round {
     domUpdates.highlightAvatarTurn();
     this.currentRound++;
     $('.value-display').text('');
-  };
+  }
 
   createBonusRound() {
     round.currentRound = 5;

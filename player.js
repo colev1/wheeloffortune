@@ -1,16 +1,21 @@
 class Player {
-	constructor(name, totalScore) {
-		this.name = name;
-		this.roundScore = 0; 
-		this.totalScore = 0;
-	}
+  constructor(name, totalScore) {
+    this.name = name;
+    this.roundScore = 0; 
+    this.totalScore = 0;
+  }
 	
-	incrementRoundScore(roundScore) {
-		this.roundScore += roundScore;
+  incrementRoundScore(roundScore) {
+    this.roundScore += roundScore;
     domUpdates.displayRoundScore();
-	}
+  }
 
-	cumulateTotalScore(roundScore) {
+  decreaseRoundScore() {
+    this.roundScore -= 100;
+    domUpdates.displayRoundScore();
+  }
+
+  cumulateTotalScore(roundScore) {
     this.totalScore += roundScore;
     domUpdates.displayTotalScore();
   }
@@ -21,8 +26,8 @@ class Player {
   }
 }
 
- if (typeof module !== 'undefined') {
-	module.exports = Player;
+if (typeof module !== 'undefined') {
+  module.exports = Player;
 }
 
 
