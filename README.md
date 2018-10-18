@@ -7,7 +7,7 @@ For this project we leveraged object-oriented programming (OOP) principles to bu
 
 See It Live:
 
-![Game in action](image/wheel.gif)
+![Game in action](wheeloffortune/images/wheel.gif)
 
 
 Languages Used:
