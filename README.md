@@ -18,7 +18,7 @@ For this project we leveraged object-oriented programming (OOP) principles to bu
 The game consists of 5 rounds, including 1 bonus round. It allows three users to select letters to solve a puzzle with only a category name as a clue. Each player has one move per turn and the player that solves the generated round puzzle wins that round. Only the round winning player's score will be added to their total bank score. The player with the highest total bank score at the end of 4 rounds will move onto the bonus round. The lucky bonus round player has a chance to win 1 of 10 amazing prizes by picking 3 consonants and 1 vowel of a generated bonus puzzle and attempting to solve. If the bonus round player does not solve the bonus puzzle, they will still win the money in their total bank.
 
 ### Primary JavaScript Technologies Used
-- JQuery
+- Javascript/JQuery
 
 ### Enhancements
 Additional enhancements will include:
