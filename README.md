@@ -30,6 +30,8 @@ Additional enhancements will include:
 
 ### Screenshots
 
+![WireFrame](images/wof_wireframe.png)
+
 ![Game in action](images/wheel.gif)
 
 ![Game in action](images/wheel-2.gif)
