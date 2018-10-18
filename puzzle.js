@@ -13,12 +13,12 @@ class Puzzle {
 
   generateNewPuzzle(puzzleBankIndex) {
     let puzzleBankArray = ['one_word_answers',
-     'two_word_answers', 
-     'three_word_answers', 
-     'four_word_answers'];
+      'two_word_answers', 
+      'three_word_answers', 
+      'four_word_answers'];
     var puzzleBankofGame = puzzleBankArray[puzzleBankIndex];
     var chosenBankArray = data.puzzles[puzzleBankofGame].puzzle_bank;
-    var selectedPuzzle = chosenBankArray[Math.floor(Math.random()*chosenBankArray.length)];
+    var selectedPuzzle = chosenBankArray[Math.floor(Math.random() * chosenBankArray.length)];
     this.category = selectedPuzzle.category;
     this.letters = selectedPuzzle.total_number_of_letters;
     var answer = selectedPuzzle.correct_answer.toLowerCase().replace(/-/g, " ").replace(/&/g, "and");
@@ -64,16 +64,15 @@ class Puzzle {
         
       }, 3000);
       
-      } else {
+    } else {
       if (round.currentRound === 5) {
         domUpdates.displayGameLoser();
-      }
-      else {
+      } else {
         $('.player-turn-display').text('That is Incorrect!');
         setTimeout(() => {
           round.changePlayer();
-        domUpdates.displayCurrentPlayerTurn();
-        domUpdates.highlightCurrentPlayerTurn();
+          domUpdates.displayCurrentPlayerTurn();
+          domUpdates.highlightCurrentPlayerTurn();
         }, 2000);
       }
 
@@ -81,11 +80,14 @@ class Puzzle {
     $('.solve-button-form').addClass('hidden');
     domUpdates.clearGuessInput();
   }
-}
+};
 
 class bonusPuzzle extends Puzzle {
-
-}
+  constructor (puzzleBankIndex, winner) {
+    super (puzzleBankIndex);
+    this.winner = winner;
+  }
+};
 
 if (typeof module !== 'undefined') {
   module.exports = Puzzle;

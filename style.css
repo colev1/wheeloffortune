@@ -3,23 +3,21 @@
 }
 
 body {
-  background-repeat: no-repeat;
   background-image: url('images/disco.jpg');
+  background-image: url('images/disco.jpg');
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-size: cover;
   display: grid;
   font-family: sans-serif;
   font-weight: bold;
   grid-template-rows: auto;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url('images/disco.jpg');
   height: 100vh;
 }
 
 /*Welcome pop-up styling*/
 .welcome-message, .bonus-round-popup {
-  position: absolute;
-  z-index: 2;
   align-items: center;
   background-image: linear-gradient(#A8F2F9, #01A869);
   border: 10px solid orange;
@@ -30,8 +28,10 @@ body {
   justify-content: space-around;
   left: 250px;
   position: absolute;
+  position: absolute;
   top: 120px;
   width: 65%;
+  z-index: 2;
   z-index: 2;
 }
 
@@ -388,8 +388,8 @@ hr {
 }
 
 .bonus-round-head {
-  font-size: 40px;
   color: black;
+  font-size: 40px;
   text-align: center;
 }
 
