@@ -2,10 +2,6 @@ class Game {
 	constructor(round) {
 		this.round = round;
 	}
-
-	quitGame() {
-    
-	}
 };
 
 
