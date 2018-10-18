@@ -1,8 +1,8 @@
 class Wheel {
-	constructor() {
-		this.wheelElements = [];
+  constructor() {
+    this.wheelElements = [];
     this.currentWheelElement = this.wheelElements[0];
-	}
+  }
 	
   generateWheelValues() {
     let wheelArray = data.wheel;
@@ -16,11 +16,7 @@ class Wheel {
     let newValue = Math.round(Math.random() * 9);
     this.currentWheelElement = this.wheelElements[newValue];
     return this.currentWheelElement;
-	}
-
-  // displayWheelValue() {
-  //   $('.value-display').text('Spin Value: ' + wheel.currentWheelElement);
-  //   }
+  }
  
   generateBonusWheel() {
     this.wheelElements = [
@@ -34,8 +30,8 @@ class Wheel {
       'VIKING RIVER CRUISE',
       10000,
       'A NEW HOUSE'
-      ];
-      return this.wheelElements;
+    ];
+    return this.wheelElements;
   }   
 }
 
