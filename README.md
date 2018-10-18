@@ -4,6 +4,7 @@ A site for users to play Wheel of Fortune with their friends; Solve puzzles, and
 
 ### Set Up - Front-end
 Clone this repo
+
 Run `npm install` in your terminal
 
 ### Test Driven Development
