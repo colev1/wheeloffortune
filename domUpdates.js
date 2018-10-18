@@ -19,20 +19,19 @@ const domUpdates = {
       if (puzzle.answer.charAt(i) === letter) {
         $(tiles[i]).addClass('correct-letter');
         $(tiles[i]).text(letter.toUpperCase());
-        round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
+        if ($(event.target).hasClass('consonant')) { 
+          round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
+       }
       }
-    }
-    if ($(event.target).hasClass('vowel')) {
-      if (round.currentRound !== 5 ){
-        round.currentPlayer.roundScore -= 100;
-        round.currentPlayer.displayRoundScore();
-      }
-    }
-
+    };
+      if ($(event.target).hasClass('vowel')) {  
+        round.currentPlayer.decreaseRoundScore();
+      } else {
+    };
     if (round.currentRound !== 5) {
       round.changePlayer();
-      round.highlightCurrentPlayerTurn(); 
-      round.displayCurrentPlayerTurn();
+      domUpdates.highlightCurrentPlayerTurn(); 
+      domUpdates.displayCurrentPlayerTurn();
       domUpdates.disableVowels();
       domUpdates.disableConsonants();
     }
@@ -122,6 +121,13 @@ const domUpdates = {
     })
   },
 
+  resetTotalScore() {
+    round.players.map((player) => {
+      player.totalScore = 0;
+      $(`.total-score-${player.name}`).text('TOTAL BANK: $ ' + player.totalScore);
+    })
+  },
+
   clearSpinValueDisplay() {
     $('.value-display').text('');
   },
@@ -129,7 +135,7 @@ const domUpdates = {
   clearGuessInput() {
     $('.solve-input').val('');
   },
-
+  
   displayBonusRoundInstructions(winningPlayer) {
     let bonusRoundPopup = $('.bonus-round-popup');
     bonusRoundPopup.removeClass('hidden');
@@ -167,7 +173,33 @@ const domUpdates = {
       bonusRoundPopup.removeClass('hidden');
       $('.bonus-round-head').text(`SORRY PLAYER ${winningPlayer.name}, YOU'RE WRONG! GAME OVER. YOU STILL WIN $${winningPlayer.totalScore}`);
     }, 1000);
+  },
+
+  displayRoundScore() {
+    $(`.round-money-${round.currentPlayer.name}`).text('$ ' + round.currentPlayer.roundScore);
+  },
+
+  displayTotalScore() {
+    $(`.total-score-${round.currentPlayer.name}`).text('Total Score $ ' + round.currentPlayer.totalScore);
+  },
+
+  displayCurrentPlayerTurn() {
+    $('.player-turn-display').text(`Player ${round.currentPlayer.name}.. your turn!`);
+  },
+
+  highlightCurrentPlayerTurn() {
+    $(`.avatar${round.previousPlayer.name}`).removeClass('highlight-avatar');
+    $(`.avatar${round.currentPlayer.name}`).addClass('highlight-avatar');
+  },
+
+  resetAvatar() {
+    $(`.avatar`).removeClass('highlight-avatar');
+  },
+
+  displayWheelValue() {
+    $('.value-display').text('Spin Value: ' + wheel.currentWheelElement);
   }
+
 }
 
 if (typeof module !== 'undefined') {

@@ -3,30 +3,36 @@
 }
 
 body {
+  background-repeat: no-repeat;
+  background-image: url('images/disco.jpg');
+  background-size: cover;
   display: grid;
   font-family: sans-serif;
   font-weight: bold;
   grid-template-rows: auto;
   background-size: cover;
-   background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-image: url('images/disco.jpg');
   height: 100vh;
 }
 
+/*Welcome pop-up styling*/
 .welcome-message, .bonus-round-popup {
   position: absolute;
   z-index: 2;
+  align-items: center;
   background-image: linear-gradient(#A8F2F9, #01A869);
   border: 10px solid orange;
-  height: 70%;
-  width: 65%;
-  left: 250px;
-  top: 120px;
+  box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 70%;
   justify-content: space-around;
-  box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
+  left: 250px;
+  position: absolute;
+  top: 120px;
+  width: 65%;
+  z-index: 2;
 }
 
 .wheel-logo {
@@ -34,13 +40,13 @@ body {
 }
 
 .start-game-button {
-  width: 200px;
-  font-size: 18px;
-  height: 40px;
-  font-weight: bold;
-  color: white;
-  border: orange 5px double;
   background-image: linear-gradient(#A8F2F9, #01A869);
+  border: orange 5px double;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  height: 40px;
+  width: 200px;
 }
 
 .start-game-button:hover {
@@ -49,41 +55,74 @@ body {
 }
 
 .container {
-  padding: 10px 5px 20px 10px;
+  padding: 10px 5px 20px 10px;}
+
+
+/*Quit styling*/
+.quit-button {
+  background-color: transparent;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+  left: 15px;
+  padding-left: -1px;
+  position: absolute;
+  top: 20px;
+  width: 68px;
+  z-index: 1;
 }
 
+.fa-times-circle {
+  font-size: 16px;
+  color: #fff;
+}
+
+.quit-button:hover {
+  box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.75);
+}
+
+.game-nav {
+  display: inline-block;
+  width: 20px;
+}
+
+/*Player & avatar styling*/
 .players-container {
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-top: 0px;
   margin-left: 40px;
   padding-bottom: 0px;
 }
 
 .player {
-  border: orange 5px double;
-  height: 75px;
-  width: 210px;
-  display: flex;
-  font-size: 16px;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
-  margin: 20px 50px 10px 50px;
   border-radius: 5px;
+  border: orange 5px double;
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  height: 75px;
+  justify-content: space-around;
+  margin: 20px 50px 10px 50px;
+  width: 210px;
 }
 
 .avatar {
+  background-color: #E3F1F3;
+  border-radius: 50%;
+  border: 5px double orange;
   display: flex;
   flex-direction: column;
   height: 130%;
-  border: 5px double orange;
-  border-radius: 50%;
+  margin-left: -76px;
   width: 45%;
   z-index: 1;
-  margin-left: -76px;
-  background-color: #E3F1F3;
 }
 
 .avatar1 {
@@ -104,22 +143,56 @@ body {
   background-size: cover;
 }
 
+.highlight-avatar {
+  background-color: white;
+  border-color: #9ecaed;
+  box-shadow: 1px 1px 40px #01A869;
+}
+
 .player-name {
   font-size: 20px;
 }
 
 .name-bank {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   height: 75%;
-  align-items: center;
+  justify-content: space-around;
 }
 
 .round-money{
   font-size: 16px;
 }
 
+/*Category display styling*/
+.category-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 14px;
+  padding: 15px 0px 0px 0px;
+}
+
+.category-display {
+  background-color: #E3F1F3;
+  border-radius: 5px;
+  border: orange 3px solid;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  height: 35px;
+  margin-left: -3px;
+  margin-top: 4px;
+  padding: 7px;
+  position: absolute;
+  text-align: center;
+  width: 250px;
+  z-index: 1;
+}
+
+/*Game-board styling*/
 .board-container {
   align-items: center;
   display: flex;
@@ -139,177 +212,142 @@ body {
 
 .game-board-box {
   background-color: #01A869;
+  border: 1px solid black;
   display: block;
   float: left;
   height: 80px;
-  width: 65px;
-  position: relative;
-  border: 1px solid black;
   margin: 1px;
+  position: relative;
+  width: 65px;
 }
 
 hr {
   border: orange 7px double;
-  width: 800px;
-  margin-top: 0px;
   margin-bottom: 0px;
+  margin-top: 0px;
+  width: 800px;
 }
 
-.category-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 15px 0px 0px 0px;
-  margin-top: 14px;
-}
 
-.category-display {
-  width: 250px;
-  height: 35px;
-  border: orange 3px solid;
-  margin-left: -3px;
-  text-align: center;
-  font-size: 16px;
-  padding: 7px;
-  background-color: #E3F1F3;
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
-  position: absolute;
-  border-radius: 5px;
-}
-
+/*Spin value & Player turn styling*/
 .spin-value-container {
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 13px;
   padding: 5px 0px 5px 0px;
-  margin-top: 15px;
 }
 
 .value-display, .player-turn-display {
-  width: 250px;
-  height: 40px;
-  border: orange 5px double;
-  background-color: #E3F1F3;
-  margin-left: 5px;
-  text-align: center;
-  font-size: 16px;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  background-color: #E3F1F3;
   border-radius: 5px;
+  border: orange 5px double;
+  display: flex;
+  font-size: 16px;
+  height: 53px;
+  justify-content: center;
+  margin-left: 5px;
+  padding: 5px;
+  text-align: center;
+  width: 250px;
 }
 
+
+/*Letter bank styling*/
 .letter-bank-container {
   align-items: center;
   display: flex;
   flex-direction: row;
-  justify-content: 
-  space-around;
+  justify-content: space-around;
+  margin-top: 13px;
   padding-bottom: 10px;
-  margin-top: 14px;
 }
 
 .letter-bank {
-  border-top: orange 5px double;
   border-bottom: orange 5px double;
-  height: 45px;
-  width: 923px;
+  border-top: orange 5px double;
   display: flex;
+  height: 45px;
   justify-content: center;
+  width: 923px;
 }
 
 .letters, .vowels {
+  align-items: center;
   background-color: #E3F1F3;
-  border: 1px solid grey;
   border-radius: 5px;
+  border: 1px solid grey;
   color: grey;
-  margin: 2px 2px;
-  padding: 8px 10px;
   cursor: pointer;
-  width: 30px;
   display: flex;
   font-size: 16px;
   justify-content: center;
-  align-items: center;
+  margin: 2px 2px;
+  padding: 8px 10px;
+  width: 30px;
 }
 
 #blank {
   background-color: orange;
 }
 
+/*Action buttons styling*/
 .action-buttons-container {
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 8px;
   padding: 0px;
-  margin-top: 9px;
 }
 
 .button {
-  background-image: repeating-linear-gradient(to right, gold, orange 40px, gold 60px);
-  color: white;
-  font-size: 20px;
-  border: orange 5px double;
-  border-radius: 50%;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  background-image: repeating-linear-gradient(to right, gold, orange 40px, gold 60px);
+  border-radius: 50%;
+  border: orange 5px double;
+  color: white;
+  display: flex;
+  font-size: 20px;
   height: 95px;
-  width: 95px;
+  justify-content: center;
   margin: 10px 30px;
+  width: 95px;
 }
 
 .button:hover {
   cursor: pointer;
 }
 
+/*Check guess styling*/
 .solve-button-form {
-  position: absolute;
-  font-size: 24px;
-  z-index: 1;
-  width: 300px;
-  right: 80px;
-  bottom: 50px;
-  border: 4px solid orange;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
   border-radius: 5px;
+  border: 4px solid orange;
+  bottom: 50px;
+  box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
+  display: flex;
+  font-size: 24px;
+  justify-content: space-between;
+  position: absolute;
+  right: 80px;
+  width: 300px;
+  z-index: 1;
 }
 
 .solve-input {
+  font-size: 20px;
   height: 40px;
   width: 250px;
-  font-size: 20px;
 }
 
 .submit-guess-button {
-  height: 40px;
   background-color: #01A869;
   border: none;
   color: white;
-}
-
-.vowel-popup {
-  position: absolute;
-  font-size: 24px;
-  z-index: 1;
-  background-color: white;
-  width: 260px;
-  left: 80px;
-  bottom: 50px;
-  border: 4px solid orange;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
+  height: 40px;
 }
 
 .vowels {
@@ -330,12 +368,12 @@ hr {
 }
 
 .correct-letter {
-  font-size: 66px;
-  font-family: sans-serif;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  font-family: sans-serif;
+  font-size: 66px;
+  font-weight: bold;
+  justify-content: center;
 }
 
 .letters:enabled {
@@ -368,9 +406,9 @@ hr {
   color: orange;
 }
 
-
 .button:enabled:hover {
   background-image: url(images/wheel_share.png);
   background-position: center; 
 }
+
 

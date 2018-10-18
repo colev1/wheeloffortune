@@ -1,6 +1,6 @@
 class Round {
-	constructor(player1, player2, player3, currentRound) {
-		this.currentRound = currentRound || 1;	
+  constructor(player1, player2, player3, currentRound) {
+    this.currentRound = currentRound || 1;	
     this.players = [player1, player2, player3];
     this.currentPlayer = player1;
     this.counter = 0;
@@ -16,25 +16,11 @@ class Round {
     } else {
       this.previousPlayer = this.currentPlayer;
       this.currentPlayer = this.players[this.counter]
-    };
+    }
     domUpdates.enablePlayerButtons();
     domUpdates.clearSpinValueDisplay();
     domUpdates.clearGuessInput();
-
-  }
-
-  displayCurrentPlayerTurn() {
-    $('.player-turn-display').text(`PLAYER ${round.currentPlayer.name}.. YOUR TURN!`);
-  }
-
-  highlightCurrentPlayerTurn() {
-    $(`.avatar${this.previousPlayer.name}`).removeClass('highlight-avatar');
-    $(`.avatar${this.currentPlayer.name}`).addClass('highlight-avatar');
   };
-
-  resetAvatar() {
-    $(`.avatar`).removeClass('highlight-avatar');
-  }
 
   newRound() {
     domUpdates.resetRoundScores();
@@ -42,12 +28,12 @@ class Round {
     domUpdates.resetLetters();
     puzzle.selectPuzzleBank(puzzleBankIndex);
     this.currentPlayer = player1;
-    this.resetAvatar();
+    domUpdates.resetAvatar();
     domUpdates.displayPlayerTurn();
     domUpdates.highlightAvatarTurn();
     this.currentRound++;
     $('.value-display').text('');
-  };
+  }
 
   createBonusRound() {
     round.currentRound = 5;
@@ -55,12 +41,10 @@ class Round {
     domUpdates.resetPuzzleBoard();
     domUpdates.resetLetters();
     puzzle.selectPuzzleBank(puzzleBankIndex);
-    // domUpdates.displayBonusRoundInstructions();
-    // domUpdates.displayPlayerTurn();
-    // domUpdates.highlightAvatarTurn();
+    domUpdates.displayBonusRoundInstructions();
     $('.value-display').text('');
-  }
-}
+   }
+ }
 
 
 

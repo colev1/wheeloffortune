@@ -12,15 +12,20 @@ describe ('Wheel', function() {
     expect(true).to.equal(true);
   });
 
-  it('should have a default for the current values', function() {
-    expect(value.currentValue).to.equal([0]);
+  it('should have a default for the current wheel values', function() {
+    wheel = new Wheel;
+    expect(wheel.wheelElements).to.eql([]);
   });
 
   it('should be able to generate new values for each round', function() {
-    wheel.new Wheel(8);
+    wheel = new Wheel();
+    wheel.generateWheelValues();
+    expect(wheel.wheel).to.eql()
   });
 
-  it('should spin', function() {
-    wheel.spinNewWheel()
+  it('should generate a bonus wheel', function() {
+    wheel = new Wheel();
+    wheel.generateBonusWheel();
+    expect(wheel.wheelElements[2]).to.equal(15000);
   });
 })

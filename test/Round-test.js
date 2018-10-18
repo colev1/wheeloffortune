@@ -21,16 +21,15 @@ describe ('Round', function() {
     expect(round.currentRound).to.equal(1);
   });
 
-  it('should be able to take currentRound as a parameter', function() {
-    round = new Round(2, 'The 90s', 'Disco');
-    expect(round).to.eql({currentRound: 2});
-  });
-
-  // it('should have a winner', function() {
-  //   round = new Round(2, 'Libby');
-  //   expect(round.winner).to.equal('Libby');
+  // it('should change players', function() {
+  //   round = new Round(player1, player2, player3, 2);
+  //   var player1;
+  //   var player2;
+  //   var player3;
+  //   expect(round.currentPlayer).to.equal(player1);
+  //   round.changePlayer();
+  //   expect(round.currentPlayer).to.equal(player2);
   // });
-
-  it('should have a default of player1 at the beginning of each round')
-  expect(round.currentPlayer).to.equal(player1);
 });
+
+

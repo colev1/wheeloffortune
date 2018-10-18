@@ -6,6 +6,7 @@ $('.vowel-button').on('click', domUpdates.enableVowels);
 $('.vowel').on('click', domUpdates.unhighlightVowels);
 $('.letters').on('click', domUpdates.checkLetter);
 $('.solve-input').on('keyup', domUpdates.enableSolveButton);
+$('.quit-button').on('click', quitGame);
 
 var wheel;
 var round;
@@ -35,14 +36,14 @@ function spinWheel() {
     domUpdates.disableVowels();
     domUpdates.disablePlayerButtons();
     let newWheelValue = wheel.spinNewWheel();
-    wheel.displayWheelValue();
+    domUpdates.displayWheelValue();
     if (newWheelValue === 'BANKRUPT') {
       round.currentPlayer.scoreBankrupt();
       domUpdates.disableVowels();
       setTimeout(() => { 
         round.changePlayer();
-        round.highlightCurrentPlayerTurn(); 
-        round.displayCurrentPlayerTurn();
+        domUpdates.highlightCurrentPlayerTurn(); 
+        domUpdates.displayCurrentPlayerTurn();
         domUpdates.enablePlayerButtons();
       }, 1600);
     }
@@ -50,22 +51,27 @@ function spinWheel() {
       domUpdates.disableVowels();
       setTimeout(() => {
         round.changePlayer();
-        round.highlightCurrentPlayerTurn(); 
-        round.displayCurrentPlayerTurn();
+        domUpdates.highlightCurrentPlayerTurn(); 
+        domUpdates.displayCurrentPlayerTurn();
         domUpdates.enablePlayerButtons();
       }, 1600);
     }
     //bonus round 
   } else {
     let newWheelValue = wheel.spinNewWheel();
-    wheel.displayWheelValue();
+    domUpdates.displayWheelValue();
     $('.vowel-button').prop('disabled', true);
     $('.spin-button').prop('disabled', true);
     domUpdates.enableBothVowelsConsonants();
   }
 }
 
- 
+ function quitGame() {
+    domUpdates.resetPuzzleBoard();
+    domUpdates.resetRoundScores();
+    domUpdates.resetTotalScore();
+    createNewGame();
+  };
 
 
 $('.submit-guess-button').on('click', checkGuess);

@@ -1,39 +1,35 @@
 class Player {
-	constructor(name, totalScore) {
-		this.name = name;
-		this.roundScore = 0; // todo: collection for keeping scores of all rounds [0, 12, 4]
-		this.totalScore = 0;
-	}
+  constructor(name, totalScore) {
+    this.name = name;
+    this.roundScore = 0; 
+    this.totalScore = 0;
+  }
 	
 	incrementRoundScore(roundScore) {
 		if (round.currentRound !== 5) {
     this.roundScore += roundScore;
     this.displayRoundScore();
     }
-	}
+  };
+	
+  decreaseRoundScore() {
+    this.roundScore -= 100;
+    domUpdates.displayRoundScore();
+  };
 
-	cumulateTotalScore(roundScore) {
+  cumulateTotalScore(roundScore) {
     this.totalScore += roundScore;
-    this.displayTotalScore();
-  }
+    domUpdates.displayTotalScore();
+  };
 
   scoreBankrupt() {
   	this.roundScore = 0;
-    this.displayRoundScore();
+    domUpdates.displayRoundScore();
   }
+};
 
-  displayRoundScore() {
-    $(`.round-money-${round.currentPlayer.name}`).text('$ ' + this.roundScore);
-  }
-
-  displayTotalScore() {
-    $(`.total-score-${round.currentPlayer.name}`).text('Total Score $ ' + this.totalScore);
-  }
-   
-}
-
- if (typeof module !== 'undefined') {
-	module.exports = Player;
+if (typeof module !== 'undefined') {
+  module.exports = Player;
 }
 
 
