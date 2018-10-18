@@ -24,7 +24,6 @@ class Puzzle {
     var answer = selectedPuzzle.correct_answer.toLowerCase().replace(/-/g, " ").replace(/&/g, "and");
     this.answer = answer;
     this.numberOfWords = puzzleBankIndex + 1;
-    console.log(this);
     if (round.currentRound !== 4) {
       domUpdates.displayPlayerTurn();
       domUpdates.highlightAvatarTurn();
@@ -61,9 +60,7 @@ class Puzzle {
         } else {
           round.newRound();
         }
-        
       }, 3000);
-      
     } else {
       if (round.currentRound === 5) {
         domUpdates.displayGameLoser();
@@ -75,7 +72,6 @@ class Puzzle {
           domUpdates.highlightCurrentPlayerTurn();
         }, 2000);
       }
-
     }
     $('.solve-button-form').addClass('hidden');
     domUpdates.clearGuessInput();

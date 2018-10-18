@@ -17,20 +17,20 @@ describe ('Player', function() {
     expect(player.name).to.equal('Libby');
   })
 
-  // it('should increment the players round score when the round is over', function() {
-  //   player = new Player('Libby');
-  //   player.incrementRoundScore();
-  //   expect(player.roundScore).to.equal(200);
-  // })
+  it('should increment the players round score when the round is over', function() {
+    player = new Player('Libby');
+    player.incrementRoundScore();
+    expect(player.roundScore).to.equal(200);
+  })
 
   it('should add up total score at the end of the game', function() {
     player.cumulateTotalScore();
     expect(player.cumulateTotalScore).to.equal(1000);
   })
 
-  // it('should bankrupt the player', function() {
-  //   player.scoreBankrupt();
-  //   expect.equal(player.scoreBankrupt, 0);
-  // })
+  it('should bankrupt the player', function() {
+    player.scoreBankrupt();
+    expect.equal(player.scoreBankrupt, 0);
+  })
 })
 

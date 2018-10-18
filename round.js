@@ -11,11 +11,11 @@ class Round {
     this.counter++;
     if (!this.players[this.counter]) {
       this.counter = 0;
-      this.previousPlayer = this.currentPlayer
-      this.currentPlayer = this.players[this.counter]
+      this.previousPlayer = this.currentPlayer;
+      this.currentPlayer = this.players[this.counter];
     } else {
       this.previousPlayer = this.currentPlayer;
-      this.currentPlayer = this.players[this.counter]
+      this.currentPlayer = this.players[this.counter];
     }
     domUpdates.enablePlayerButtons();
     domUpdates.clearSpinValueDisplay();
@@ -26,12 +26,12 @@ class Round {
     domUpdates.resetRoundScores();
     domUpdates.resetPuzzleBoard();
     domUpdates.resetLetters();
-    puzzle.selectPuzzleBank(puzzleBankIndex);
-    this.currentPlayer = player1;
     domUpdates.resetAvatar();
+    puzzle.selectPuzzleBank(puzzleBankIndex);
+    this.currentRound++;
+    this.currentPlayer = player1;
     domUpdates.displayPlayerTurn();
     domUpdates.highlightAvatarTurn();
-    this.currentRound++;
     $('.value-display').text('');
   }
 
@@ -44,8 +44,6 @@ class Round {
     $('.value-display').text('');
   }
 }
-
-
 
 if (typeof module !== 'undefined') {
   module.exports = Round;
