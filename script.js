@@ -66,12 +66,12 @@ function spinWheel() {
   }
 }
 
- function quitGame() {
-    domUpdates.resetPuzzleBoard();
-    domUpdates.resetRoundScores();
-    domUpdates.resetTotalScore();
-    createNewGame();
-  };
+function quitGame() {
+  domUpdates.resetPuzzleBoard();
+  domUpdates.resetRoundScores();
+  domUpdates.resetTotalScore();
+  createNewGame();
+}
 
 
 $('.submit-guess-button').on('click', checkGuess);

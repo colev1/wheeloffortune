@@ -20,7 +20,7 @@ class Round {
     domUpdates.enablePlayerButtons();
     domUpdates.clearSpinValueDisplay();
     domUpdates.clearGuessInput();
-  };
+  }
 
   newRound() {
     domUpdates.resetRoundScores();
@@ -41,10 +41,9 @@ class Round {
     domUpdates.resetPuzzleBoard();
     domUpdates.resetLetters();
     puzzle.selectPuzzleBank(puzzleBankIndex);
-    domUpdates.displayBonusRoundInstructions();
     $('.value-display').text('');
-   }
- }
+  }
+}
 
 
 

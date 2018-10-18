@@ -1,6 +1,5 @@
-
 const domUpdates = {
-
+  
   hideWelcomeMessage(event) {
     event.preventDefault();
     $('.welcome-message').hide();
@@ -21,13 +20,13 @@ const domUpdates = {
         $(tiles[i]).text(letter.toUpperCase());
         if ($(event.target).hasClass('consonant')) { 
           round.currentPlayer.incrementRoundScore(wheel.currentWheelElement);
-       }
+        }
       }
-    };
-      if ($(event.target).hasClass('vowel')) {  
-        round.currentPlayer.decreaseRoundScore();
-      } else {
-    };
+    }
+    if ($(event.target).hasClass('vowel')) {  
+      round.currentPlayer.decreaseRoundScore();
+    } else {
+    }
     if (round.currentRound !== 5) {
       round.changePlayer();
       domUpdates.highlightCurrentPlayerTurn(); 
@@ -147,22 +146,21 @@ const domUpdates = {
   },
 
   hideNonWinningPlayers(winningPlayer) {
-      $('.1').addClass('hidden');
-      $('.2').addClass('hidden');
-      $('.3').addClass('hidden');
-      $(`.${winningPlayer.name}`).removeClass('hidden');
+    $('.1').addClass('hidden');
+    $('.2').addClass('hidden');
+    $('.3').addClass('hidden');
+    $(`.${winningPlayer.name}`).removeClass('hidden');
   },
 
   displayGameWinner() {
     setTimeout(() => {
-    let bonusRoundPopup = $('.bonus-round-popup');
-    bonusRoundPopup.removeClass('hidden');
+      let bonusRoundPopup = $('.bonus-round-popup');
+      bonusRoundPopup.removeClass('hidden');
       if (typeof wheel.currentWheelElement === 'number') {
         let newTotalScore = winningPlayer.totalScore + wheel.currentWheelElement;
         $('.bonus-round-head').text(`CONGRATS PLAYER ${winningPlayer.name}, YOU WON $${newTotalScore}`);
-      }
-      else {
-    $('.bonus-round-head').text(`CONGRATS PLAYER ${winningPlayer.name}, YOU WON A ${wheel.currentWheelElement}`);
+      } else {
+        $('.bonus-round-head').text(`CONGRATS PLAYER ${winningPlayer.name}, YOU WON A ${wheel.currentWheelElement}`);
       }
     }, 1000);
   },

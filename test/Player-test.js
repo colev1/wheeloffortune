@@ -5,7 +5,7 @@ const spies = require('chai-spies');
 chai.use(spies);
 
 global.domUpdates = require('../domUpdates.js');
-chai.spy.on(global.domUpdates, [], () => true);
+chai.spy.on(global.domUpdates, ['displayTotalScore', 'displayRoundScore'], () => true);
 
 describe ('Player', function() {
   it('should return true', function() {
@@ -23,10 +23,10 @@ describe ('Player', function() {
   //   expect(player.roundScore).to.equal(200);
   // })
 
-  // it('should add up total score at the end of the game', function() {
-  //   player.cumulateTotalScore();
-  //   expect.equal(player.cumulateTotalScore, 1000);
-  // })
+  it('should add up total score at the end of the game', function() {
+    player.cumulateTotalScore();
+    expect(player.cumulateTotalScore).to.equal(1000);
+  })
 
   // it('should bankrupt the player', function() {
   //   player.scoreBankrupt();
