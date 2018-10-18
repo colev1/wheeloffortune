@@ -6,6 +6,7 @@ $('.vowel-button').on('click', domUpdates.enableVowels);
 $('.vowel').on('click', domUpdates.unhighlightVowels);
 $('.letters').on('click', domUpdates.checkLetter);
 $('.solve-input').on('keyup', domUpdates.enableSolveButton);
+$('.quit-button').on('click', quitGame);
 
 var wheel;
 var round;
@@ -66,7 +67,13 @@ function spinWheel() {
   }
 }
 
- 
+ function quitGame() {
+  debugger;
+    domUpdates.resetPuzzleBoard();
+    domUpdates.resetRoundScores();
+    domUpdates.resetTotalScore();
+    createNewGame();
+  };
 
 
 $('.submit-guess-button').on('click', checkGuess);
